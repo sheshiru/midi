@@ -4,4 +4,4 @@
 - npm install --save express hbs dotenv mongoose bcrypt express-session connect-mongo
 - git init
 
-Missing for now : cloudinary cloudinary-multer multer
+Missing for now : cloudinary cloudinary-multer multer axios
