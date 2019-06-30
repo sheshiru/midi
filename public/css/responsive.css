@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------
+TABLETS - PORTRAIT & LANDSCAPE MODE
+--------------------------------------------------------------*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles pour cette Media Queries */
+}
+/*--------------------------------------------------------------
+SMARTPHONES - PORTRAIT & LANDSCAPE MODE
+--------------------------------------------------------------*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles pour cette Media Queries */
+}
