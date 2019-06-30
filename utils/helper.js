@@ -1,101 +1,66 @@
-const express = require("express");
-const router = express.Router();
+const hbs = require("hbs");
 
-//-------------------------------------------------------
-// LOGIN PART
-//-------------------------------------------------------
-// const UserLog = require("../models/UserLog"); // UserLog model
-// BCrypt to encrypt passwords
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
-router.get("/login", (req, res, next) => {
-  res.render("auth/login");
-});
+// CUSTOM HELPERS
 
-router.post("/login", (req, res, next) => {
-  const email = req.body.email;
-  const password = req.body.password;
+// function below: add the ternary operator functionnality to .hbs files
+// usage : {{ternary true "yay" "nay "}} => prints yay
+// usage : {{ternary NaN "yay" "nay "}} => prints nay
+hbs.registerHelper("ternary", (test, yes, no) => (test ? yes : no));
 
-  if (email === "" || password === "") {
-    res.render("auth/login", {
-      errorMessage: "Indicate an email and a password to sign up"
-    });
-    return;
-  }
-  User.findOne({
-    email: email
-  })
-    .then(user => {
-      if (user) {
-        if (bcrypt.compareSync(password, user.password)) {
-          // Save the login in the session!
-          req.session.currentUser = { email };
-          res.redirect("/");
-        }
-      } else {
-        res.render("auth/login", {
-          errorMessage: "Incorrect password or email"
-        });
-      }
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
+// add comparison operator feature to hbs templates
+/* 
 
-//-------------------------------------------------------
-// SIGNUP PART
-//-------------------------------------------------------
+USAGE =>
 
-const User = require("../models/User"); // UserLog model
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
-router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const lastname = req.body.lastname;
-  const email = req.body.email;
-  const password = req.body.password;
-  const salt = bcrypt.genSaltSync(bcryptSalt);
-  const hashPass = bcrypt.hashSync(password, salt);
+{{#compare 1 10 operator="<"}}
+awesome, 1 is less thant 10 !!!
+{{/compare}}
 
-  User.findOne({ username: username }).then(user => {
-    if (user !== null) {
-      res.render("auth/signup", {
-        errorMessage: "The username already exists!"
-      });
-      return;
+*/
+
+hbs.registerHelper("compare", function(lvalue, rvalue, options) {
+  if (arguments.length < 3)
+    throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+
+  var operator = options.hash.operator || "==";
+
+  var operators = {
+    "==": function(l, r) {
+      return l == r;
+    },
+    "===": function(l, r) {
+      return l === r;
+    },
+    "!=": function(l, r) {
+      return l != r;
+    },
+    "<": function(l, r) {
+      return l < r;
+    },
+    ">": function(l, r) {
+      return l > r;
+    },
+    "<=": function(l, r) {
+      return l <= r;
+    },
+    ">=": function(l, r) {
+      return l >= r;
+    },
+    typeof: function(l, r) {
+      return typeof l == r;
     }
-    User.create({
-      username,
-      lastname,
-      email,
-      password: hashPass
-    })
-      .then(() => {
-        if (username === "" || password === "") {
-          res.render("auth/signup", {
-            errorMessage: "Indicate an email and a password to sign up"
-          });
-          return;
-        }
-        console.log("aussi");
-        res.redirect("/");
-      })
-      .catch(error => {
-        next(error);
-      });
-  });
-});
+  };
 
-//-------------------------------------------------------
-// LOGOUT PART
-//-------------------------------------------------------
-router.get("/logout", (req, res, next) => {
-  req.session.destroy(err => {
-    // can't access session here
-    res.redirect("/login");
-  });
-});
+  if (!operators[operator])
+    throw new Error(
+      "Handlerbars Helper 'compare' doesn't know the operator " + operator
+    );
 
-module.exports = router;
+  var result = operators[operator](lvalue, rvalue);
+
+  if (result) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
