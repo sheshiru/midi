@@ -7,14 +7,14 @@ const userSchema = new Schema({
   name: String,
   firstName: String,
   password: String,
-  company: {type: Schema.Types.ObjectId, ref: "Company"},
+  company: { type: Schema.Types.ObjectId, ref: "Company" },
   seniority: Date,
   memberSince: Date,
   photo: String,
-  favorites: {type: Schema.Types.ObjectId, ref: "Restaurant"},
-  wishlist: {type: Schema.Types.ObjectId, ref: "Restaurant"},
+  favorites: { type: Schema.Types.ObjectId, ref: "Restaurant" },
+  wishlist: { type: Schema.Types.ObjectId, ref: "Restaurant" },
   admin: Boolean
-})
+});
 
 const User = mongoose.model("User", userSchema);
 module.exports = Company;
