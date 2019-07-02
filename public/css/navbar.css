@@ -1,0 +1,23 @@
+.navbar {
+  width: 90%;
+  margin: auto;
+  border: 1px solid red;
+  height: 90px;
+}
+.auth-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.links-container {
+  border: 1px solid green;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-link {
+  margin-right: 10px;
+}

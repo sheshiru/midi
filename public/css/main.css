@@ -1,4 +1,5 @@
 @import "./home.css";
+@import "./navbar.css";
 @import "./footer.css";
 @import "./form.css";
 @import "./login-signup.css";
@@ -26,6 +27,7 @@ body {
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   user-select: none;
+  min-width: 320px;
 }
 ol,
 ul {

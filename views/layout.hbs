@@ -10,11 +10,17 @@
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/client.js" type="module"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title>Project II</title>
+  <title>midi</title>
 </head>
 
-<body>
-  {{{body}}}
+<body class="{{bodyClass}}">
+  <div class="{{bigWrapper}}">
+    <header class="{{headerClass}}">
+      {{>nav_main}}
+    </header>
+    {{{body}}}
+  </div>
+  {{> footer}}
 </body>
 
 </html>
