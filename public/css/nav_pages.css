@@ -1,9 +1,9 @@
 .navbar-pages {
-  background-color: #071716;
+  background-color: #f9f9f0;
   width: 100vw;
   /* border: 1px solid red; */
   height: 130px;
-  color: #f9f9f0;
+  color: #071716;
 }
 .big-nav-container {
   display: flex;
@@ -12,23 +12,37 @@
   height: 100%;
   width: 90%;
   margin: auto;
+  border: 2px solid green;
 }
 .navigation {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+  width: 65%;
 }
-/* .pages-links-container {
-  width: 15%;
-  height: 100%;
+.pages-navlinks-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-} */
-/* .pages-auth-container {
+  border: 1px solid red;
+  width: 100%;
+}
+.pages-navlinks-container a {
+  font-size: 1.8rem;
+}
+img {
+  width: 10%;
+}
+.pages-auth-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-} */
+  width: 35%;
+  border: 1px solid red;
+}
+
+.pages-links-container {
+  border: 1px solid red;
+}
