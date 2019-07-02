@@ -14,11 +14,15 @@ router.get(["/", "/home"], (req, res) => {
 router.get("/restaurants", (req, res) => {
   Restaurant.find()
     .then(restos => {
-      let bigWrapper = "wrapper-restaurants";
-      res.render("restaurants", {
-        restos,
-        bigWrapper,
-        navlayout: true
+      Company.find().then(company => {
+        console.log(company[0]._id);
+        let bigWrapper = "wrapper-restaurants";
+        res.render("restaurants", {
+          company: company[0],
+          restos,
+          bigWrapper,
+          navlayout: true
+        });
       });
     })
     .catch(err => console.error(err));

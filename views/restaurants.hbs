@@ -1,6 +1,3 @@
-{{!-- <header class="{{headerClass}}">
-  {{>nav_pages}}
-</header> --}}
 {{!-- SIDEBAR --}}
 <aside class="sidebar">
   <h4 class="">Filter by:</h4>
@@ -34,7 +31,7 @@
   <h1>Recommended Restaurants</h1>
   <div class="restaurants-grid">
     {{#each restos}}
-    <a href="/restaurant/{{this._id}}" class="individual-thumbnail">
+    <a href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail">
       <div class="restaurants-image"><img src="{{this.image}}" alt="restaurant image"></div>
       <p class="restaurants-name">{{this.name}}</p>
       <p class="restaurants-distance">{{this.distance}}m</p>
