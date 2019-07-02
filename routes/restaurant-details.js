@@ -5,7 +5,8 @@ const Restaurant = require("../models/Restaurant");
 router.get("/restaurant/:id", (req, res) => {
   Restaurant.findById(req.params.id)
     .then(resto => {
-      res.render("restaurant-details", { resto });
+      let likesCount = resto.favorites.length
+      res.render("restaurant-details", { resto, likesCount });
     })
     .catch(err => {
       console.log(err);

@@ -4,6 +4,7 @@
 @import "./form.css";
 @import "./login-signup.css";
 @import "./responsive.css";
+@import "./restaurant-details.css";
 
 @font-face {
   font-family: "Notomono";

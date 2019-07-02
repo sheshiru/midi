@@ -1,6 +1,43 @@
-<div class="restaurant">
-
-
 <h1>{{resto.name}}</h1>
+<div class="resto-container">
+  <div class="resto-left-container">
+    <img src="{{resto.image}}" alt="Restaurant pic">
+    {{!-- ADD: Click to add to favorites + source for heart image --}}
+    {{!-- Add later: toggle heart full or empty depending on whether the restaurant is in the user's favorites or not --}}
+      <a href="" class="resto-likes-container">
+        <img src="" alt="<3">
+        <div class="resto-likes">{{likesCount}}</div>
+      </a>
+  </div>
+  <div class="resto-left-container">
+    <p>Type of food: {{resto.typeOfCuisine}}</p>
+    <h2>Your coworkers recommend:</h2>
+    <ul>
+      {{#each resto.recommendations as |recommendation|}}
+        <li>{{recommendation}}</li>
+      {{/each}}
+    </ul>
+    <form>
+      <p>Have you been to that restaurant? How fast was the service?</p>
+      <div>
+        <input type="radio" id="speed1"
+        name="speed" value="slow">
+        <label for="speed1">Slow</label>
 
+        <input type="radio" id="speed2"
+        name="speed" value="medium">
+        <label for="speed2">Medium</label>
+
+        <input type="radio" id="speed3"
+        name="speed" value="quick">
+        <label for="speed3">Quick</label>
+      </div>
+      <div>
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="map-container">
+  <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.2848186643514!2d2.387103315118238!3d48.85277897928692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e672752a818a69%3A0x97b9f3305eadf098!2sBao+Bao!5e0!3m2!1sfr!2sfr!4v1562073914591!5m2!1sfr!2sfr" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
