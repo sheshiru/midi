@@ -15,9 +15,11 @@
 
 <body class="{{bodyClass}}">
   <div class="{{bigWrapper}}">
+    {{#if navlayout}}
     <header class="{{headerClass}}">
       {{>nav_main}}
     </header>
+    {{/if}}
     {{{body}}}
   </div>
   {{> footer}}

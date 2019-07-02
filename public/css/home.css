@@ -1,8 +1,5 @@
-/* .home-content {
-  height: 100vh;
-  width: 100vw;
-} */
 .bg-home {
+  position: relative;
   height: 100vh;
   width: 100vw;
   background-image: url(/medias/img/home-bg.png);
@@ -10,7 +7,70 @@
   overflow: hidden;
   background-repeat: no-repeat;
 }
-.main-title {
-  font-size: 5rem;
+/* .main-title {
+  display: flex;
+  font-size: 8.5rem;
   color: white;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} */
+.hr-container {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 42%;
+  left: 54%;
+}
+.vertical-hr {
+  border: none;
+  border-left: 1px solid #f9f9f0;
+  height: 20vh;
+  width: 1px;
+  margin: 0;
+}
+.flex-center-vertical {
+  display: flex;
+  align-items: center;
+  height: 89vh;
+  width: 100vw;
+  /* border: 1px solid yellow; */
+}
+.home-text-container {
+  display: flex;
+  width: 100vw;
+  min-width: 30%;
+  height: 45%;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+  align-items: center;
+  padding-right: 6%;
+}
+.home-text-container p {
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  width: 30%;
+  background-color: #f9f9f0;
+  padding: 6% 5%;
+}
+
+.btn-see-all {
+  border-radius: 5px;
+  margin-top: 8%;
+  padding: 3% 3%;
+  display: inline-block;
+  font-size: 1.8rem;
+  background-color: #071716;
+  color: #f9f9f0;
+}
+/* -------------------------------------------------------------------------------- */
+/*  ABOUT
+ -------------------------------------------------------------------------------- */
+.about {
+  height: 300px;
+  background-color: #f9f9f0;
+}
+.about-text {
+  color: #071716;
 }

@@ -5,6 +5,11 @@
 @import "./login-signup.css";
 @import "./responsive.css";
 
+@font-face {
+  font-family: "Notomono";
+  src: url("./../medias/fonts/NotoMono-Regular.ttf") format("ttf");
+}
+
 /* -------------------------------------------------------------------------------- */
 /*  CSS Reset
  -------------------------------------------------------------------------------- */
@@ -13,6 +18,7 @@
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-family: "Notomono";
 }
 *:focus {
   /* removes blue border */

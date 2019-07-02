@@ -4,20 +4,25 @@ const Restaurant = require("../models/Restaurant");
 const seeds = require("../bin/seeds");
 
 router.get(["/", "/home"], (req, res) => {
-  let bigWrapper = "bg-home";
+  // let bigWrapper = "bg-home";
   let navbar = "navbar-home";
   let mainTitle = "midi";
-  res.render("home", { bigWrapper, navbar, mainTitle });
+  res.render("home", { navbar, mainTitle, navlayout: false });
 });
 
 router.get("/restaurants", (req, res) => {
   Restaurant.find()
-  .then(restos => {
-    let bigWrapper = "bg-rest";
-    let navbar = "navbar-rest";
-    res.render("restaurants", { restos, bigWrapper, navbar });  
-  })
-  .catch(err => console.error(err))
+    .then(restos => {
+      let bigWrapper = "bg-rest";
+      let navbar = "navbar-rest";
+      res.render("restaurants", {
+        restos,
+        bigWrapper,
+        navbar,
+        navlayout: true
+      });
+    })
+    .catch(err => console.error(err));
 });
 
 router.get("/account", (req, res) => {
