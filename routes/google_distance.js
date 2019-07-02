@@ -14,4 +14,3 @@ function getDistance(origins, destination, clbk) {
 }
 
 module.exports = getDistance;
-Réduire;
