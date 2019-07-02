@@ -11,11 +11,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
+    "google-distance-matrix": "^1.1.1",
+    "google-maps": "^3.3.0",
     "hbs": "^4.0.4",
     "mongoose": "^5.6.2"
   }

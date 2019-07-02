@@ -8,6 +8,7 @@ const app = express();
 const mongoose = require("mongoose");
 const basePageRouter = require("./routes/index");
 const restaurantsRouter = require("./routes/restaurant-details");
+const googleRouter = require("./routes/google_distance");
 // const randomRouter = require("./routes/random");
 // const authRou\er = require("./routes/auth");
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(basePageRouter);
 app.use(restaurantsRouter);
+app.use(googleRouter);
 // app.use(randomRouter);
 // app.use("/", authRouter);
 
