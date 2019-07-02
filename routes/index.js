@@ -1,5 +1,6 @@
 const express = require("express");
 const router = new express.Router();
+const Company = require("../models/Company");
 const Restaurant = require("../models/Restaurant");
 const seeds = require("../bin/seeds");
 
@@ -41,5 +42,9 @@ router.get("/favorites", (req, res) => {
 // Restaurant.insertMany(seeds)
 // .then(res => console.log("restaurants added"))
 // .catch(err => console.log("error adding restaurants:", err))
+
+// Company.insertMany(seeds)
+// .then(res => console.log("companies added", res))
+// .catch(err => console.log("error adding companies:", err))
 
 module.exports = router;
