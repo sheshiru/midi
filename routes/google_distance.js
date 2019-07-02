@@ -1,16 +1,17 @@
-const express = require("express");
-const router = new express.Router();
 const distance = require("google-distance-matrix");
 
 distance.key(process.env.APIKEY);
 
-var origins = ["parcmonceauparis"];
-var destinations = ["le mesnil esnard"];
+var origins = ["ironhack paris"];
+var destination = ["bao bao paris"];
 
-distance.matrix(origins, destinations, function(err, distances) {
-  if (!err) {
-    console.log(distances.rows[0].elements[0].distance.text);
-  }
-});
+function getDistance(origins, destination, clbk) {
+  distance.matrix(origins, destination, function(err, distances) {
+    if (!err) {
+      clbk(distances.rows[0].elements[0].distance.text);
+    }
+  });
+}
 
-module.exports = router;
+module.exports = getDistance;
+Réduire;
