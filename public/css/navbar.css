@@ -1,7 +1,7 @@
 .navbar {
   width: 90%;
   margin: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 90px;
 }
 .auth-container {
@@ -11,12 +11,13 @@
   height: 100%;
 }
 .links-container {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 15%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: white;
 }
 .login-link {
   margin-right: 10px;
