@@ -1,0 +1,42 @@
+{{!-- SIDEBAR --}}
+<aside class="sidebar">
+  <h4 class="">Filter by:</h4>
+  <div>
+    <h3>Type of food</h3>
+    <ul class="cuisine-list">
+      <li class="cuisine-list-item"><a href="/restaurants/tag/chinese">Chinese</a></li>
+      <li class="cuisine-list-item"><a href="/restaurants/tag/thai">Thai</a></li>
+      <li class="cuisine-list-item"><a href="/restaurants/tag/chicken">Chicken</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Speed</h3>
+    <ul class="speed-list">
+      <li class="speed-list-item"><a href="/restaurants/speed/fast">Fast</a></li>
+      <li class="speed-list-item"><a href="/restaurants/speed/medium">Medium</a></li>
+      <li class="speed-list-item"><a href="/restaurants/speed/slow">Slow</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Distance</h3>
+    <ul class="distance-list">
+      <li class="distance-list-item"><a href="/restaurants/distance/200">Less than 200m</a></li>
+      <li class="distance-list-item"><a href="/restaurants/distance/800">Less than 800m</a></li>
+      <li class="distance-list-item"><a href="/restaurants/speed/far">800m and further</a></li>
+    </ul>
+  </div>
+</aside>
+
+<div class="restaurants-big-container">
+  <h1>Recommended Restaurants</h1>
+  <div class="restaurants-grid">
+    {{#each restos}}
+      <a href="/restaurant/{{this._id}}" class="individual-thumbnail">
+        <div class="resto-image"><img src="{{this.image}}" alt="restaurant image"></div>
+        <p class="resto-name">{{this.name}}</p>
+        <p class="resto-distance">{{this.distance}}m</p>
+        <p class="resto-favs">53 <3</p>
+      </a>
+    {{/each}}
+  </div>
+</div>

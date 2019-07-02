@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const restaurants = [
   {
     name: "Bao Bao",
-    typeOfCuisine: [],
+    typeOfCuisine: ["Chinese"],
     distance: 80,
     speed: "Medium",
     image: "https://cdn1.centralapp.com/api/v1/media/gallery-large/place-5753-t3ecunt851une4s34lbz.jpeg",
@@ -14,7 +14,7 @@ const restaurants = [
   },
   {
     name: "Le Comptoir du Poulet",
-    typeOfCuisine: [],
+    typeOfCuisine: ["Chicken"],
     distance: 350,
     speed: "Medium",
     image: "https://f.roocdn.com/images/menus/96486/header-image.jpg",
@@ -24,7 +24,7 @@ const restaurants = [
   },
   {
     name: "Mme Shawn",
-    typeOfCuisine: [],
+    typeOfCuisine: ["Thai"],
     distance: 300,
     speed: "Medium",
     image: "https://www.sortiraparis.com/images/55/14066/259051-mme-shawn-bistrot-thailandais-arrive-chez-ubereats.jpg",

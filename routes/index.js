@@ -1,5 +1,7 @@
 const express = require("express");
 const router = new express.Router();
+const Restaurant = require("../models/Restaurant");
+const seeds = require("../bin/seeds");
 
 router.get(["/", "/home"], (req, res) => {
   let bigWrapper = "bg-home";
@@ -9,9 +11,13 @@ router.get(["/", "/home"], (req, res) => {
 });
 
 router.get("/restaurants", (req, res) => {
-  let bigWrapper = "bg-rest";
-  let navbar = "navbar-rest";
-  res.render("restaurants", { bigWrapper, navbar });
+  Restaurant.find()
+  .then(restos => {
+    let bigWrapper = "bg-rest";
+    let navbar = "navbar-rest";
+    res.render("restaurants", { restos, bigWrapper, navbar });  
+  })
+  .catch(err => console.error(err))
 });
 
 router.get("/account", (req, res) => {
@@ -29,5 +35,9 @@ router.get("/wishlist", (req, res) => {
 router.get("/favorites", (req, res) => {
   res.render("favorites");
 });
+
+// Restaurant.insertMany(seeds)
+// .then(res => console.log("restaurants added"))
+// .catch(err => console.log("error adding restaurants:", err))
 
 module.exports = router;

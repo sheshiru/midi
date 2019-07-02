@@ -7,6 +7,8 @@ const hbs = require("hbs");
 const app = express();
 const mongoose = require("mongoose");
 const basePageRouter = require("./routes/index");
+const restaurantsRouter = require("./routes/restaurant-details");
+// const randomRouter = require("./routes/random");
 // const authRou\er = require("./routes/auth");
 
 app.set("view engine", "hbs"); //
@@ -17,6 +19,8 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(basePageRouter);
+app.use(restaurantsRouter);
+// app.use(randomRouter);
 // app.use("/", authRouter);
 
 app.locals.site_url = process.env.SITE_URL;

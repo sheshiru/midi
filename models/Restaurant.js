@@ -10,7 +10,6 @@ const restaurantSchema = new Schema({
   //   enum: ["vegan", "veggie", "carnivore", "gluten free"]
   // },
   distance: Number,
-  // speed: { type: String, enum: ["Fast", "Medium", "Slow"] },
   speed: {
     quick: {
       type: Number,
