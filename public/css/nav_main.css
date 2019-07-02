@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: white;
+  color: #f9f9f0;
 }
 .login-link {
   margin-right: 10px;

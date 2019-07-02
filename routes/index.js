@@ -7,18 +7,15 @@ router.get(["/", "/home"], (req, res) => {
   // let bigWrapper = "bg-home";
   let navbar = "navbar-home";
   let mainTitle = "midi";
-  res.render("home", { navbar, mainTitle, navlayout: false });
+  res.render("home", { mainTitle, navlayout: false });
 });
 
 router.get("/restaurants", (req, res) => {
   Restaurant.find()
     .then(restos => {
-      let bigWrapper = "bg-rest";
-      let navbar = "navbar-rest";
+      // let headerClass = "rest-navbar";
       res.render("restaurants", {
         restos,
-        bigWrapper,
-        navbar,
         navlayout: true
       });
     })

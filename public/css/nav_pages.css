@@ -1,0 +1,34 @@
+.navbar-pages {
+  background-color: #071716;
+  width: 100vw;
+  /* border: 1px solid red; */
+  height: 130px;
+  color: #f9f9f0;
+}
+.big-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+.navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+/* .pages-links-container {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+/* .pages-auth-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+} */
