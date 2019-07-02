@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const cuisineSchema = new Schema({
-  typeOfFood: String
-})
+// const cuisineSchema = new Schema({
+//   typeOfFood: String
+// })
 
-const Cuisine = mongoose.model("Cuisine", cuisineSchema);
-module.exports = Cuisine;
+// const Cuisine = mongoose.model("Cuisine", cuisineSchema);
+// module.exports = Cuisine;
