@@ -22,12 +22,13 @@
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Notomono";
 }
+
 *:focus {
   /* removes blue border */
   outline: none;
 }
+
 *::-moz-focus-inner {
   border: none;
 }
@@ -39,23 +40,31 @@ body {
   user-select: none;
   min-width: 320px;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 a {
   outline: none;
   text-decoration: none;
   color: inherit;
 }
+
 html {
-  overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
-  -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-  -ms-text-size-adjust: 100%; /* controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+  overflow-y: scroll;
+  /* Keeps page centered in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
 img {
   max-width: 100%;
-  height: auto; /* default: auto */
+  height: auto;
+  /* default: auto */
   max-height: 100%;
 }
 

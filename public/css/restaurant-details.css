@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+
+
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.resto-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.nameRestaurant {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.image_onerestaurant {
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.resto-left-container {
+  width: 330px;
+  height: 230px;
+  margin-right: 50px;
+}
+
+.resto-right-container {
+  width: 240px;
+
+}
+
+#typeOfFood {
+  margin-bottom: 10px;
+}
+
+#coworkers_recommend {
+
+  margin-bottom: 10px;
+}
+
+#isItFast {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

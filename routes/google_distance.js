@@ -4,8 +4,8 @@ const distance = require("google-distance-matrix");
 
 distance.key(process.env.APIKEY);
 
-var origins = ["ironhack paris"];
-var destinations = ["bao bao paris"];
+var origins = ["parcmonceauparis"];
+var destinations = ["le mesnil esnard"];
 
 distance.matrix(origins, destinations, function(err, distances) {
   if (!err) {
