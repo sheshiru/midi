@@ -1,14 +1,14 @@
 <div class="admin-forms-wrapper">
-  <h1 class="admin-forms-page-title">Add a restaurant you want to share with your coworkers</h1>
+  <h1 class="admin-forms-page-title">Add a restaurant to the database</h1>
   <hr class="separator-horizontal">
-  <div class="user-form-frame">
-    <div class="user-form-container">
+  <div class="admin-form-frame">
+    <div class="admin-form-container">
 
 
-      <form method="post" action="/user-add-restaurant" id="user-add-form" enctype="multipart/form-data">
+      <form method="post" action="/admin-forms" id="admin-add-form" enctype="multipart/form-data">
         <div class="part1-flex-col">
-          <label for="restaurant-name">Restaurant name</label>
-          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="beber">
+          <label for="name">Restaurant name</label>
+          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="Chez Beber">
 
           <label for="cuisine">Type of cuisine</label>
           <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" value="Vietnamese">
@@ -17,23 +17,35 @@
           <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
         </div>
         <div class="part2-flex-row">
-          <p>Share your experience about service speed</p>
+          <p>Service speed</p>
           <input type="radio" id="quick" name="speed" value="quick" checked>
-          <label for="huey">Quick</label>
+          <label for="speed">Quick</label>
           <input type="radio" id="medium" name="speed" value="medium">
-          <label for="dewey">Medium</label>
+          <label for="speed">Medium</label>
           <input type="radio" id="slow" name="speed" value="slow">
-          <label for="louie">Slow</label>
+          <label for="speed">Slow</label>
         </div>
-        <div class="part3-flex-col">
-          <label for="restaurant_img">Image</label>
-          <input name="restaurant_img" id="restaurant_img" type="file">
-
-          <label for="favorites" class="favorites">Favorites</label>
-
-          <button class="btn-send">Send</button>
+        <div class="takeout">
+          <p>Take out</p>
+          <input id="take_out" name="takeout" type="radio" value="Take Away">
+          <label for="takeout">Take away</label>
+          <input id="eat_in" name="takeout" type="radio" value="Eat in">
+          <label for="takeout">Eat in</label>
+          <input id="both" name="takeout" type="radio" value="Both">
+          <label for="takeout">Both</label>
         </div>
-      </form>
     </div>
+    <div class="part3-flex-col">
+      <label for="recommendations">Dish recommendations</label>
+      <input id="recommendations" name="recommendations" type="text" placeholder="ex: lamen porc haché piquant"
+        value="lamen porc haché piquant">
+      <label for="image">Image</label>
+      <input name="image" id="restaurant_img" type="file">
+
+      <button class="btn-send">Send</button>
+    </div>
+
+    </form>
   </div>
+</div>
 </div>

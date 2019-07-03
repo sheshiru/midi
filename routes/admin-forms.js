@@ -1,10 +1,10 @@
 const express = require("express");
 const router = new express.Router();
 const Restaurant = require("../models/Restaurant");
-const uploadCloud = require("../config/cloudinary.js");
+const uploadCloud = require("../config/cloudinary");
 
 router.post("/admin-forms", uploadCloud.single("image"), (req, res) => {
-  const newResto = ({
+  const {
     name,
     address,
     typeOfCuisine,
@@ -12,9 +12,22 @@ router.post("/admin-forms", uploadCloud.single("image"), (req, res) => {
     speed,
     takeout,
     image
-  } = req.body);
+  } = req.body;
+  const newResto = {
+    name,
+    address,
+    typeOfCuisine,
+    recommendations,
+    speed,
+    takeout,
+    image
+  };
   if (req.file) newResto.image = req.file.secure_url;
   Restaurant.create(newResto)
-    .then(resto => {})
+    .then(resto => {
+      res.redirect("/admin-forms", resto);
+    })
     .catch(error => console.error("error creating restaurant:", error));
 });
+
+module.exports = router;
