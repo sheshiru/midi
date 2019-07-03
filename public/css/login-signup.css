@@ -1,6 +1,6 @@
-#login-wrapper {
-  min-height: 70vh;
-  margin-top: 3%;
+.wrapper-login {
+  background-color: #f9f9f0;
+  min-height: 100vh;
 }
 
 /*---------------------------------------
@@ -8,6 +8,7 @@ LOG IN FORM
 ----------------------------------------*/
 
 .form-title {
+  margin-top: 3%;
   text-align: center;
   font-size: 2.3em;
   font-weight: 700;
@@ -43,7 +44,7 @@ LOG IN FORM
 }
 
 .login-form-frame {
-  background-color: #071716;
+  background-color: #0a201f;
   border-radius: 0.2rem;
   width: 45vw;
   padding: 3%;
@@ -64,14 +65,8 @@ LOG IN FORM
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 9%;
   max-width: 400px;
 }
-
-#login_form input:last-of-type {
-  margin-bottom: 1.2rem;
-}
-
 #login_form {
   display: flex;
   justify-content: center;
@@ -79,21 +74,22 @@ LOG IN FORM
   flex-direction: column;
   width: 100%;
 }
-
-#login_form .form-item-wrapper {
-  width: 30%;
+#login_form input:last-of-type {
+  margin-bottom: 1.2rem;
 }
-
-/* .form-subtitle {
-} */
+#login_form label {
+  cursor: pointer;
+  margin: 10px 0;
+}
 
 .form-sub-infos {
   font-size: 0.9rem;
   text-align: center;
 }
 
-#login_form .button-primary {
-  margin: 1.5rem 0 1rem 0;
+.btn-login {
+  padding: 3% 3%;
+  border-radius: 0.2rem;
 }
 
 .button-link-signup {

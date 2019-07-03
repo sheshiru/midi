@@ -1,5 +1,4 @@
 .navbar-pages {
-  background-color: #f9f9f0;
   width: 100vw;
   /* border: 1px solid red; */
   height: 130px;
@@ -22,6 +21,11 @@
   /* border: 1px solid pink; */
   display: flex;
   justify-content: flex-start;
+  height: 80%;
+  width: 15%;
+}
+.logo-pic {
+  display: block;
 }
 
 .navigation {
@@ -41,14 +45,10 @@
 }
 
 .pages-navlinks-container a {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
-
-.user-icon,
-.heart-icon,
-.wishlist-icon {
-  width: 15%;
-  cursor: pointer;
+.pages-navlinks-container a:hover {
+  text-decoration: underline;
 }
 
 /* .pages-icons-container {
@@ -62,8 +62,12 @@
 
 .pages-icons-container {
   /* border: 1px solid red; */
-  width: 35%;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .pages-icons-container a {
   display: block;
+  width: 20%;
 }
