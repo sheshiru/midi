@@ -4,8 +4,9 @@
   /* border: 1px solid red; */
   height: 130px;
   color: #071716;
-  margin-bottom: 8%;
+  /* margin-bottom: 8%; */
 }
+
 .big-nav-container {
   display: flex;
   align-items: center;
@@ -16,11 +17,13 @@
   /* border: 2px solid green; */
   padding-left: 100px;
 }
+
 .logo-container {
   /* border: 1px solid pink; */
   display: flex;
   justify-content: flex-start;
 }
+
 .navigation {
   display: flex;
   justify-content: flex-start;
@@ -28,6 +31,7 @@
   height: 100%;
   width: 65%;
 }
+
 .pages-navlinks-container {
   display: flex;
   justify-content: space-around;
@@ -35,9 +39,11 @@
   /* border: 1px solid red; */
   width: 100%;
 }
+
 .pages-navlinks-container a {
   font-size: 1.8rem;
 }
+
 .user-icon,
 .heart-icon,
 .wishlist-icon {

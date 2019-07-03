@@ -1,11 +1,6 @@
 * {
   box-sizing: border-box;
 
-
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
 }
 
 .resto-container {
@@ -14,8 +9,15 @@ body {
   margin-top: 50px;
 }
 
+#distance {
+
+  font-weight: bold;
+  position: absolute;
+  /* bottom: 220px;
+  right: 100px; */
+}
+
 .nameRestaurant {
-  margin-top: 60px;
   text-align: center;
   font-size: 2.5em;
 }
