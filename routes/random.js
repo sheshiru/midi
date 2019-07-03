@@ -17,6 +17,7 @@ const comp = require("../models/Company");
 // }
 // getRandom();
 
+//wtf
 router.get("/random", (req, res) => {
   Restaurant.find()
     .then(dbRes => {
