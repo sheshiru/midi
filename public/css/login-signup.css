@@ -43,7 +43,8 @@ LOG IN FORM
   font-size: 0.9rem;
 }
 
-.login-form-frame {
+.login-form-frame,
+.signup-form-frame {
   background-color: #0a201f;
   border-radius: 0.2rem;
   width: 45vw;
@@ -53,31 +54,36 @@ LOG IN FORM
   align-items: center;
   margin: auto;
 }
-.login-form-container {
+.login-form-container,
+.signup-form-container {
   background-color: #f9f9f0;
   border-radius: 0.2rem;
   height: 95%;
   width: 95%;
   padding: 3%;
 }
-.login-form-content {
+.login-form-content,
+.signup-form-content {
   padding: 0 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 400px;
 }
-#login_form {
+#login_form,
+#signup_form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
-#login_form input:last-of-type {
+#login_form input:last-of-type,
+#signup_form input:last-of-type {
   margin-bottom: 1.2rem;
 }
-#login_form label {
+#login_form label,
+#signup_form label {
   cursor: pointer;
   margin: 10px 0;
 }
@@ -87,7 +93,8 @@ LOG IN FORM
   text-align: center;
 }
 
-.btn-login {
+.btn-login,
+.btn-signup {
   padding: 3% 3%;
   border-radius: 0.2rem;
 }
