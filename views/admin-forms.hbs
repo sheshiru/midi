@@ -1,0 +1,39 @@
+<div class="admin-forms-wrapper">
+  <h1 class="admin-forms-page-title">Add a restaurant you want to share with your coworkers</h1>
+  <hr class="separator-horizontal">
+  <div class="user-form-frame">
+    <div class="user-form-container">
+
+
+      <form method="post" action="/user-add-restaurant" id="user-add-form" enctype="multipart/form-data">
+        <div class="part1-flex-col">
+          <label for="restaurant-name">Restaurant name</label>
+          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="beber">
+
+          <label for="cuisine">Type of cuisine</label>
+          <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" value="Vietnamese">
+
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
+        </div>
+        <div class="part2-flex-row">
+          <p>Share your experience about service speed</p>
+          <input type="radio" id="quick" name="speed" value="quick" checked>
+          <label for="huey">Quick</label>
+          <input type="radio" id="medium" name="speed" value="medium">
+          <label for="dewey">Medium</label>
+          <input type="radio" id="slow" name="speed" value="slow">
+          <label for="louie">Slow</label>
+        </div>
+        <div class="part3-flex-col">
+          <label for="restaurant_img">Image</label>
+          <input name="restaurant_img" id="restaurant_img" type="file">
+
+          <label for="favorites" class="favorites">Favorites</label>
+
+          <button class="btn-send">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
