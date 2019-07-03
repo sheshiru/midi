@@ -1,8 +1,7 @@
-* {
-  box-sizing: border-box;
-
+.wrapper-restaurant-detail {
+  background-color: #f9f9f0;
+  min-height: 100vh;
 }
-
 .resto-container {
   display: flex;
   justify-content: center;
@@ -34,7 +33,6 @@
 .fa-heart {
   color: red;
   margin-top: 8px;
-
 }
 
 .sendButtonContainer {
@@ -55,7 +53,6 @@
 
 .resto-right-container {
   width: 240px;
-
 }
 
 #typeOfFood {
@@ -64,7 +61,7 @@
 }
 
 #coworkers_recommend {
-  text-align: justify
+  text-align: justify;
 }
 
 #isItFast {
@@ -78,7 +75,6 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
-
 }
 
 .distanceContainer {
@@ -91,7 +87,6 @@
   width: 630px;
 }
 
-
 #distance {
   display: inline;
   font-weight: bold;
@@ -102,10 +97,7 @@
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
-
-
 }
-
 
 .fa-trash {
   margin: 5px;
