@@ -8,9 +8,11 @@ const comp = require("../models/Company");
 router.get("/restaurant/:id", async (req, res) => {
   try {
     const resto = await Restaurant.findById(req.params.id);
+    let likesCount = resto.favorites.length;
     const company = await comp.findById(req.query.companyId);
     getDistance([resto.address], [company.address], distance => {
       res.render("restaurant-details", {
+        likesCount,
         resto,
         company,
         distance,
