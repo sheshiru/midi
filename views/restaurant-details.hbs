@@ -5,7 +5,7 @@
     {{!-- ADD: Click to add to favorites + source for heart image --}}
     {{!-- Add later: toggle heart full or empty depending on whether the restaurant is in the user's favorites or not --}}
     <a href="" id="resto-likes-container">
-      <div class="resto-likes">{{likesCount}}</div> <i class="fa fa-heart" aria-hidden="true"></i>
+      <div class="resto-likes">{{likesCount}}</div> <i class="far fa-heart lea" aria-hidden="true"></i>
     </a>
   </div>
 
@@ -31,7 +31,10 @@
         <label for="speed3">Quick</label>
       </div>
       <div class="sendButtonContainer">
-        <button class="sendButton" id"type="submit">Send</button>
+        <button class="sendButton" type="submit">
+          Send
+
+        </button>
       </div>
     </form>
   </div>
@@ -42,9 +45,8 @@
 
   <span id="distance">It's {{this.distance}} away !</span></div>
 <div class="map-container">
-  <iframe id="map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.2848186643514!2d2.387103315118238!3d48.85277897928692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e672752a818a69%3A0x97b9f3305eadf098!2sBao+Bao!5e0!3m2!1sfr!2sfr!4v1562073914591!5m2!1sfr!2sfr"
-    frameborder="0" style="border:0" allowfullscreen></iframe>
+  <iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHwOJfv_9R95WIwNJF6jZ6QOrWztObtSo
+    &q={{resto.address}}" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 </div>
 <div class="buttonsEditContainer">

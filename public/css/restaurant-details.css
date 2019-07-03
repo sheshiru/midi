@@ -2,6 +2,7 @@
   background-color: #f9f9f0;
   min-height: 100vh;
 }
+
 .resto-container {
   display: flex;
   justify-content: center;
@@ -30,7 +31,7 @@
   margin-right: 2px;
 }
 
-.fa-heart {
+.fa-heart.lea {
   color: red;
   margin-top: 8px;
 }
