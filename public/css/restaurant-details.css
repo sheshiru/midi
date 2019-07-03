@@ -96,3 +96,21 @@
   display: inline;
   font-weight: bold;
 }
+
+.buttonsEditContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+
+}
+
+
+.fa-trash {
+  margin: 5px;
+}
+
+.fa-edit {
+  margin: 5px;
+}
