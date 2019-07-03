@@ -1,0 +1,63 @@
+.contribute-wrapper {
+  min-height: 100vh;
+}
+.contribute-page-title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.separator-horizontal {
+  border-color: #071716;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 2%;
+}
+.user-form-frame {
+  background-color: #071716;
+  width: 45vw;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.user-form-container {
+  background-color: #f9f9f0;
+  height: 95%;
+  width: 95%;
+  padding: 3%;
+}
+
+/*---------------------------------------
+FORM STYLE
+----------------------------------------*/
+
+.part1-flex-col,
+.part3-flex-col {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+#user_add_form label {
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+#user_add_form input {
+  border: 1px solid #071716;
+  height: 32px;
+}
+
+#user_add_form input:last-of-type {
+  margin-bottom: 20px;
+}
+
+.btn-send {
+  border: 2px solid;
+  border-radius: 0.3rem;
+  padding: 6px;
+  width: 120px;
+  cursor: pointer;
+}
