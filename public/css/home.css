@@ -51,17 +51,13 @@
 }
 
 .home-text-container p {
-
   font-size: 1.2rem;
   border-radius: 3px;
   width: 30%;
   background-color: #f9f9f0;
   padding: 6% 5%;
   text-align: justify;
-
 }
-
-
 
 .btn-see-all {
   border-radius: 5px;
@@ -72,8 +68,14 @@
   display: block;
   text-align: center;
   font-size: 1.8rem;
-  background-color: #071716;
+  background-color: #cf5c19;
   color: #f9f9f0;
+}
+.btn-see-all:hover {
+  background-color: #f37226;
+}
+.btn-see-all:active {
+  transform: translateY(3px);
 }
 
 /* -------------------------------------------------------------------------------- */

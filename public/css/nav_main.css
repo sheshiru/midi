@@ -12,7 +12,7 @@
 }
 .links-container {
   /* border: 1px solid green; */
-  width: 15%;
+  width: 17%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -21,4 +21,16 @@
 }
 .login-link {
   margin-right: 10px;
+}
+.login-link:hover {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-decoration-color: #f37226;
+  text-underline-position: under;
+}
+.signup-link:hover {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-decoration-color: #f37226;
+  text-underline-position: under;
 }
