@@ -15,7 +15,7 @@ body {
 }
 
 .nameRestaurant {
-  margin-top: 100px;
+  margin-top: 60px;
   text-align: center;
   font-size: 2.5em;
 }
@@ -25,6 +25,26 @@ body {
   width: 400px;
   display: flex;
   justify-content: center;
+}
+
+#resto-likes-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-heart {
+  color: red;
+  margin-top: 8px;
+}
+
+.sendButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.sendButton {
+  width: 30%;
+  margin-top: 10px;
 }
 
 .resto-left-container {
@@ -40,14 +60,26 @@ body {
 
 #typeOfFood {
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 #coworkers_recommend {
-
-  margin-bottom: 10px;
+  text-align: justify
 }
 
 #isItFast {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+#map {
+  width: 620px;
 }
