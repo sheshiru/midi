@@ -1,36 +1,39 @@
-<h1>CONTRIBUTE PAGE </h1>
+<div class="contribute-wrapper">
+  <h1 class="contribute-page-title">Add a restaurant you want to share with your coworkers</h1>
+  <hr class="separator-horizontal">
+  <div class="user-form-frame">
+    <div class="user-form-container">
 
-<form method="post" action="/add-restaurant" class="user-add-form" enctype="multipart/form-data">
 
-  <div class="form-wrapper">
-    <label for="restaurant-name" class="restaurant-name label">Restaurant name</label>
-    <input name="name" id="restaurant-name" type="text" class="input-text" placeholder="Ex : Bao Bao" value="beber">
+      <form method="post" action="/user-add-restaurant" id="user-add-form" enctype="multipart/form-data">
+        <div class="part1-flex-col">
+          <label for="restaurant-name">Restaurant name</label>
+          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="beber">
+
+          <label for="cuisine">Type of cuisine</label>
+          <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" value="Vietnamese">
+
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
+        </div>
+        <div class="part2-flex-row">
+          <p>Share you're experience about service speed</p>
+          <input type="radio" id="quick" name="speed" value="quick" checked>
+          <label for="huey">Quick</label>
+          <input type="radio" id="medium" name="speed" value="medium">
+          <label for="dewey">Medium</label>
+          <input type="radio" id="slow" name="speed" value="slow">
+          <label for="louie">Slow</label>
+        </div>
+        <div class="part3-flex-col">
+          <label for="restaurant_img">Image</label>
+          <input name="restaurant_img" id="restaurant_img" type="file">
+
+          <label for="favorites" class="favorites">Favorites</label>
+
+          <button class="btn-send">Send</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="form-wrapper">
-    <label for="type-cuisine" class="type-cuisine label">Type of cuisine</label>
-    <input id="type-cuisine" name="cuisine" type="text" class="input-text" placeholder="ex: Vietnamese"
-      value="Vietnamese">
-  </div>
-  <div class="form-wrapper">
-    <label for="address" class="address label">Address</label>
-    <input id="address" name="address" type="text" class="input-text" placeholder="ex: 37 rue raspail"
-      value="37 rue raspail">
-  </div>
-  <div class="form-wrapper">
-    <label for="speed" class="label-descr label">Speed</label>
-    <select name="speed" id="speed">
-      <option value="-1" disabled selected>Share you're experience</option>
-      <option value="quick">Quick</option>
-      <option value="mediul">Medium</option>
-      <option value="slow">Slow</option>
-    </select>
-  </div>
-  <div class="form-wrapper">
-    <label for="restaurant-img" class="restaurant-img label">Image</label>
-    <input name="restaurant-img" id="restaurant-img" type="file" class="input-img">
-  </div>
-  <div class="form-wrapper">
-    <label for="favorites" class="favorites">Tags</label>
-  </div>
-  <button class="btn-submit">Send</button>
-</form>
+</div>

@@ -39,9 +39,9 @@ body {
   -ms-user-select: none;
   user-select: none;
   min-width: 320px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #f9f9f0;
-
+  overflow: hidden;
 }
 
 ol,
