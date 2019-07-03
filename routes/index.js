@@ -28,20 +28,20 @@ router.get("/restaurants", (req, res) => {
     .catch(err => console.error(err));
 });
 
-router.get("/account", (req, res) => {
-  res.render("user-account");
+router.get("/contribute", (req, res) => {
+  res.render("contribute", { navlayout: true });
 });
 
 router.get("/random", (req, res) => {
-  res.render("random-restaurant");
+  res.render("random-restaurant", { navlayout: true });
 });
 
 router.get("/wishlist", (req, res) => {
-  res.render("wishlist");
+  res.render("wishlist", { navlayout: true });
 });
 
 router.get("/favorites", (req, res) => {
-  res.render("favorites");
+  res.render("favorites", { navlayout: true });
 });
 
 // Restaurant.insertMany(seeds)

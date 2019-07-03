@@ -1,2 +1,36 @@
 <h1>CONTRIBUTE PAGE </h1>
-<form method="post" action=""></form>
+
+<form method="post" action="/add-restaurant" class="user-add-form" enctype="multipart/form-data">
+
+  <div class="form-wrapper">
+    <label for="restaurant-name" class="restaurant-name label">Restaurant name</label>
+    <input name="name" id="restaurant-name" type="text" class="input-text" placeholder="Ex : Bao Bao" value="beber">
+  </div>
+  <div class="form-wrapper">
+    <label for="type-cuisine" class="type-cuisine label">Type of cuisine</label>
+    <input id="type-cuisine" name="cuisine" type="text" class="input-text" placeholder="ex: Vietnamese"
+      value="Vietnamese">
+  </div>
+  <div class="form-wrapper">
+    <label for="address" class="address label">Address</label>
+    <input id="address" name="address" type="text" class="input-text" placeholder="ex: 37 rue raspail"
+      value="37 rue raspail">
+  </div>
+  <div class="form-wrapper">
+    <label for="speed" class="label-descr label">Speed</label>
+    <select name="speed" id="speed">
+      <option value="-1" disabled selected>Share you're experience</option>
+      <option value="quick">Quick</option>
+      <option value="mediul">Medium</option>
+      <option value="slow">Slow</option>
+    </select>
+  </div>
+  <div class="form-wrapper">
+    <label for="restaurant-img" class="restaurant-img label">Image</label>
+    <input name="restaurant-img" id="restaurant-img" type="file" class="input-img">
+  </div>
+  <div class="form-wrapper">
+    <label for="favorites" class="favorites">Tags</label>
+  </div>
+  <button class="btn-submit">Send</button>
+</form>

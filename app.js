@@ -7,10 +7,10 @@ const hbs = require("hbs");
 const app = express();
 const mongoose = require("mongoose");
 const basePageRouter = require("./routes/index");
+const authRouter = require("./routes/auth");
 const restaurantsRouter = require("./routes/restaurant-details");
 const googleRouter = require("./routes/google_distance");
 // const randomRouter = require("./routes/random");
-// const authRou\er = require("./routes/auth");
 
 app.set("view engine", "hbs"); //
 app.set("views", __dirname + "/views"); //
@@ -20,10 +20,10 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(basePageRouter);
+app.use("/", authRouter);
 app.use(restaurantsRouter);
 app.use(googleRouter);
 // app.use(randomRouter);
-// app.use("/", authRouter);
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
