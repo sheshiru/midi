@@ -26,9 +26,9 @@ const restaurantSchema = new Schema({
   }, // incrementation en fonction de l'experience user
   takeout: { type: String, enum: ["Take away", "Eat in", "Both"] },
   recommendations: [String],
-  image: { type: String, required: true },
+  image: { type: String },
   favorites: [{ type: Schema.Types.ObjectId, ref: "Users" }],
-  verified: Boolean
+  verified: { type: Boolean, default: false }
 });
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);

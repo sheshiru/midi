@@ -20,9 +20,13 @@
   font-size: 1.5rem;
   margin-bottom: 3%;
 }
+.restaurants-image {
+  max-width: 250px;
+  max-height: 170px;
+}
 .restaurants-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: safe;
   align-items: center;
   flex-wrap: wrap;
 }

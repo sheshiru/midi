@@ -2,32 +2,33 @@
   <div class="form-header">
     <h1 class="form-title">Join us !</h1>
   </div>
+  <p class="form-sub-infos">Already have an account ? <a href="/login" class="button-link-signup">Log in</a></p>
+</div>
 
-  <div class="signup-form-frame">
-    <div class="login-form-container">
-      <form method="post" action="/signup" id="signup_form">
-        <div class="signup-form-content">
-          <label for="name">Name</label>
-          <input type="text" name="username" class="input" placeholder="Beber" required>
-          <label for="email">Email</label>
-          <input type="email" name="email" class="input" placeholder="beber@noob.com" required>
-          <label for="password">Password</label>
-          <input type="password" name="password" class="input" placeholder="••••••" required>
-          <label for="company">Company</label>
-          <input type="company" name="company" class="input" placeholder="ironhack">
-          <label for="seniority">Seniority in the company</label>
-          <input type="date" name="seniority" class="input" placeholder="2002">
-          <label for="member">Midi Member since</label>
-          <input type="date" name="member" class="input" placeholder="2003">
-          <label for="photo">upload a photo</label>
-          <input type="file" class="input" name="photo">
-          {{#if errorMessage}}
-          <div class="error-message">{{ errorMessage }}</div>
-          {{/if}}
-          <button class="btn-signup">Sign up</button>
-        </div>
-      </form>
-      <p class="form-sub-infos">Already have an account ? <a href="/Log in" class="button-link-signup">Log in</a></p>
-    </div>
+<div class="signup-form-frame">
+  <div class="login-form-container">
+    <form method="post" action="/signup" id="signup_form">
+      <div class="signup-form-content">
+        <label for="name">Name</label>
+        <input type="text" name="username" class="input" placeholder="Beber" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" class="input" placeholder="beber@noob.com" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" class="input" placeholder="••••••" required>
+        <label for="company">Company</label>
+        <input type="company" name="company" class="input" placeholder="ironhack">
+        <label for="seniority">Seniority in the company</label>
+        <input type="date" name="seniority" class="input" placeholder="2002">
+        <label for="member">Midi Member since</label>
+        <input type="date" name="member" class="input" placeholder="2003">
+        <label for="photo">upload a photo</label>
+        <input type="file" class="input" name="photo">
+        {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+        <button class="btn-signup">Sign up</button>
+      </div>
+    </form>
+
   </div>
 </div>

@@ -14,11 +14,16 @@ router.get(["/", "/home"], (req, res) => {
 
 router.get("/restaurants", (req, res) => {
   const restauritos = [];
-  Restaurant.find()
+  let bigWrapper = "wrapper-restaurants";
+  Restaurant.find({ verified: true })
     .then(restos => {
+      if (!restos.length) {
+        res.render("restaurants", { bigWrapper, navlayout: true });
+        return;
+      }
       Company.find().then(company => {
         // console.log(company[0]._id);
-        let bigWrapper = "wrapper-restaurants";
+
         company = company[0];
         // console.log("restos:", restos);
 
@@ -26,6 +31,7 @@ router.get("/restaurants", (req, res) => {
           // console.log(resto.address, company.address);
           getDistance([resto.address], [company.address], distance => {
             // console.log("resto:", resto.address, "company:", company.address);
+
             resto["distance"] = distance;
             const restu = JSON.parse(JSON.stringify(resto));
             restu.distance = distance;

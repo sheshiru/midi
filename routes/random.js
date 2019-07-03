@@ -19,17 +19,18 @@ const comp = require("../models/Company");
 
 router.get("/random", (req, res) => {
   Restaurant.find()
-
     .then(dbRes => {
+      // console.log("ici", dbRes);
+      const randomIndex = Math.floor(Math.random() * dbRes.length);
+      console.log(dbRes[randomIndex].address);
       comp
-        .findOne({ _id: "5d1b7109f37ffc1d8fe36211" })
+        .findOne({ _id: "5d1c792edba522402fc3e242" })
         .then(company => {
+          console.log(company);
           getDistance(
             [dbRes[randomIndex].address],
             [company.address],
             distance => {
-              console.log(dbRes[randomIndex].address);
-              console.log(distance);
               res.render("random-restaurant", {
                 dbRes: dbRes[randomIndex],
                 distance,
@@ -41,8 +42,6 @@ router.get("/random", (req, res) => {
         .catch(companyErr => {
           console.log(companyErr);
         });
-
-      const randomIndex = Math.floor(Math.random() * dbRes.length);
     })
     .catch(dbErr => console.log(dbErr));
 });

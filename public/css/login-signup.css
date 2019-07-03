@@ -52,7 +52,7 @@ LOG IN FORM
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 2% auto;
 }
 .login-form-container,
 .signup-form-container {
