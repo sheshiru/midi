@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 const basePageRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const restaurantsRouter = require("./routes/restaurant-details");
+const contributeRouter = require("./routes/contribute");
+const adminFormRouter = require("./routes/admin-forms");
 // const randomRouter = require("./routes/random");
 
 app.set("view engine", "hbs"); //
@@ -21,6 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(basePageRouter);
 app.use("/", authRouter);
 app.use(restaurantsRouter);
+app.use(contributeRouter);
+app.use(adminFormRouter);
 // app.use(randomRouter);
 
 app.locals.site_url = process.env.SITE_URL;

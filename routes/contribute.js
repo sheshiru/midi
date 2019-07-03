@@ -7,16 +7,34 @@ router.get("/contribute", (req, res) => {
   res.render("contribute", { navlayout: true });
 });
 router.post(
-  "/user-add-restaurant",
+  "/useraddrestaurant",
   uploadCloud.single("restaurant_img"),
   (req, res) => {
+    const {
+      name,
+      typeOfcuisine,
+      address,
+      takeout,
+      recommendations,
+      restaurant_img
+    } = req.body;
+    const newResto = {
+      name,
+      typeOfcuisine,
+      address,
+      takeout,
+      recommendations,
+      restaurant_img
+    };
     if (req.file) newImg.restaurant_img = req.file.secure_url;
-    Restaurant.create(req.body)
+    console.log(newResto);
+    Restaurant.create(newResto)
+
       .then(newRest => {
         console.log(newRest);
-        res.render("/contribute");
+        res.redirect("/contribute");
       })
-      .catch(error => console.error("error addind new restaurant:", error));
+      .catch(error => console.error("error adding new restaurant:", error));
   }
 );
 

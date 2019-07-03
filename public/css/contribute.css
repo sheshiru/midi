@@ -40,17 +40,17 @@ FORM STYLE
   max-width: 400px;
 }
 
-#user-add-form label {
+#user_add_form label {
   cursor: pointer;
   margin: 10px 0;
 }
 
-#user-add-form input {
+#user_add_form input {
   border: 1px solid #071716;
   height: 32px;
 }
 
-#user-add-form input:last-of-type {
+#user_add_form input:last-of-type {
   margin-bottom: 20px;
 }
 

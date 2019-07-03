@@ -5,7 +5,7 @@
     <div class="user-form-container">
 
 
-      <form method="post" action="/user-add-restaurant" id="user-add-form" enctype="multipart/form-data">
+      <form method="post" action="/user_add_restaurant" id="user_add_form" enctype="multipart/form-data">
         <div class="part1-flex-col">
           <label for="restaurant-name">Restaurant name</label>
           <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="beber">
@@ -28,11 +28,11 @@
           </div>
           <div class="takeout">
             <p>Take out</p>
-            <input id="take_out" name="takeout" type="radio">
+            <input id="take_out" name="takeout" type="radio" value="takeout">
             <label for="takeaway">Take away</label>
-            <input id="eat_in" name="eatin" type="radio">
+            <input id="eat_in" name="eatin" type="radio" value="eatin">
             <label for="eatin">Eat in</label>
-            <input id="both" name="both" type="radio">
+            <input id="both" name="both" type="radio" value="both">
             <label for="both">Both</label>
           </div>
         </div>
