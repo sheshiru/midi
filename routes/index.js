@@ -50,7 +50,7 @@ router.get("/contribute", (req, res) => {
 });
 
 router.get("/random", (req, res) => {
-  res.render("random-restaurant", { navlayout: true });
+  res.render("restaurant-details", { navlayout: true });
 });
 
 router.get("/wishlist", (req, res) => {

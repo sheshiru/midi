@@ -26,9 +26,15 @@
   justify-content: flex-end;
 }
 
+.resto-likes {
+  margin-top: 7px;
+  margin-right: 2px;
+}
+
 .fa-heart {
   color: red;
   margin-top: 8px;
+
 }
 
 .sendButtonContainer {
@@ -71,11 +77,18 @@
 .map-container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 
 }
 
+.distanceContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 #map {
-  width: 620px;
+  width: 630px;
 }
 
 

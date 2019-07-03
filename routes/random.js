@@ -3,11 +3,11 @@ const router = new express.Router();
 const Restaurant = require("../models/Restaurant");
 
 router.get("/random", (req, res) => {
-  Restaurant.getRandom()
-  .then(randomResto => {
-    res.render("restaurant-details", {resto: randomResto[0]});
-  })
-  .catch(error => {
-    console.log(error)
-  })
-})
+  Restaurant.findById(req.params.id)
+    .then(resto => {
+      res.render("restaurant-details", { resto: resto });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
