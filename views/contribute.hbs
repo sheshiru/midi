@@ -17,19 +17,32 @@
           <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
         </div>
         <div class="part2-flex-row">
-          <p>Share you're experience about service speed</p>
-          <input type="radio" id="quick" name="speed" value="quick" checked>
-          <label for="huey">Quick</label>
-          <input type="radio" id="medium" name="speed" value="medium">
-          <label for="dewey">Medium</label>
-          <input type="radio" id="slow" name="speed" value="slow">
-          <label for="louie">Slow</label>
+          <div class="speed">
+            <p>Share you're experience about service speed</p>
+            <input type="radio" id="quick" name="speed" value="quick" checked>
+            <label for="huey">Quick</label>
+            <input type="radio" id="medium" name="speed" value="medium">
+            <label for="dewey">Medium</label>
+            <input type="radio" id="slow" name="speed" value="slow">
+            <label for="louie">Slow</label>
+          </div>
+          <div class="takeout">
+            <p>Take out</p>
+            <input id="take_out" name="takeout" type="radio">
+            <label for="takeaway">Take away</label>
+            <input id="eat_in" name="eatin" type="radio">
+            <label for="eatin">Eat in</label>
+            <input id="both" name="both" type="radio">
+            <label for="both">Both</label>
+          </div>
         </div>
+
         <div class="part3-flex-col">
+          <label for="recommendations">Let us know which meal you recommend</label>
+          <input id="recommendations" name="recommendations" type="text" placeholder="ex: lamen porc haché piquant"
+            value="lamen porc haché piquant">
           <label for="restaurant_img">Image</label>
           <input name="restaurant_img" id="restaurant_img" type="file">
-
-          <label for="favorites" class="favorites">Favorites</label>
 
           <button class="btn-send">Send</button>
         </div>
