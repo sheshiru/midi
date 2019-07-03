@@ -2,11 +2,10 @@
 @import "./nav_main.css";
 @import "./nav_pages.css";
 @import "./footer.css";
-@import "./form.css";
 @import "./login-signup.css";
 @import "./responsive.css";
 @import "./restaurant-details.css";
-@import "./contribute.css";
+@import "./forms.css";
 @import "./restaurants.css";
 
 @font-face {
