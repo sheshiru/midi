@@ -27,7 +27,8 @@ const restaurantSchema = new Schema({
   takeout: { type: String, enum: ["Take away", "Eat in", "Both"] },
   recommendations: [String],
   image: { type: String, required: true },
-  favorites: [{ type: Schema.Types.ObjectId, ref: "Users" }]
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Users" }],
+  verified: Boolean
 });
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);

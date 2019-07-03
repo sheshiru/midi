@@ -1,1 +1,27 @@
-<h1>Login</h1>
+<div id="login-wrapper">
+  <div class="form-header">
+    <h1 class="form-title">Welcome Back {{user.name}} !</h1>
+  </div>
+
+
+  <div class="login-form-frame">
+    <div class="login-form-container">
+      <form method="post" action="/login" id="login_form">
+        <div class="login-form-content">
+
+          <label for="email" class="label-ref label">Email</label>
+          <input type="email" name="email" class="input" placeholder="beber@noob.com" required>
+
+          <label for="password" class="label-ref label">Password</label>
+          <input type="password" name="password" class="input" placeholder="••••••" required>
+
+          {{#if errorMessage}}
+          <div class="error-message">{{ errorMessage }}</div>
+          {{/if}}
+          <button class="btn-login">Log in</button>
+        </div>
+      </form>
+      <p class="form-sub-infos">Don't have an account yet ? <a href="/signup" class="button-link-signup">Sign Up</a></p>
+    </div>
+  </div>
+</div>

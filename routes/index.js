@@ -25,7 +25,7 @@ router.get("/restaurants", (req, res) => {
         restos.forEach(resto => {
           // console.log(resto.address, company.address);
           getDistance([resto.address], [company.address], distance => {
-            console.log("resto:", resto.address, "company:", company.address);
+            // console.log("resto:", resto.address, "company:", company.address);
             resto["distance"] = distance;
             const restu = JSON.parse(JSON.stringify(resto));
             restu.distance = distance;

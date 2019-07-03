@@ -22,8 +22,9 @@
 }
 .restaurants-grid {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .one-restaurant-container {
   width: 30%;

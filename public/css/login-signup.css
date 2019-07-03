@@ -1,0 +1,118 @@
+#login-wrapper {
+  min-height: 70vh;
+  margin-top: 3%;
+}
+
+/*---------------------------------------
+LOG IN FORM 
+----------------------------------------*/
+
+.form-title {
+  text-align: center;
+  font-size: 2.3em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 0.7rem;
+  border: none;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+}
+
+.login-form-frame {
+  background-color: #071716;
+  border-radius: 0.2rem;
+  width: 45vw;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.login-form-container {
+  background-color: #f9f9f0;
+  border-radius: 0.2rem;
+  height: 95%;
+  width: 95%;
+  padding: 3%;
+}
+.login-form-content {
+  padding: 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+  max-width: 400px;
+}
+
+#login_form input:last-of-type {
+  margin-bottom: 1.2rem;
+}
+
+#login_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#login_form .form-item-wrapper {
+  width: 30%;
+}
+
+/* .form-subtitle {
+} */
+
+.form-sub-infos {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#login_form .button-primary {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.button-link-signup {
+  color: rgb(52, 52, 255);
+  padding-bottom: 0.1rem;
+}
+
+.button-link-signup:hover {
+  color: rgb(52, 52, 255);
+  border-bottom: 1px solid rgb(52, 52, 255);
+}
+
+.error-message {
+  text-align: center;
+  border-radius: 5px;
+  background: #f02b63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 30%;
+}
