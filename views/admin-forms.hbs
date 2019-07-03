@@ -14,38 +14,39 @@
           <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" value="Vietnamese">
 
           <label for="address">Address</label>
-          <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
+          <input id="address" name="address" type="text" placeholder="ex: 13 rue de la Roquette"
+            value="13 rue de la Roquette">
         </div>
         <div class="part2-flex-row">
-          <p>Service speed</p>
-          <input type="radio" id="quick" name="speed" value="quick" checked>
-          <label for="speed">Quick</label>
-          <input type="radio" id="medium" name="speed" value="medium">
-          <label for="speed">Medium</label>
-          <input type="radio" id="slow" name="speed" value="slow">
-          <label for="speed">Slow</label>
+          <div class="speed">
+            <p>Service speed</p>
+            <input type="radio" id="quick" name="speed" value="quick">
+            <label for="speed">Quick</label>
+            <input type="radio" id="medium" name="speed" value="medium">
+            <label for="speed">Medium</label>
+            <input type="radio" id="slow" name="speed" value="slow">
+            <label for="speed">Slow</label>
+          </div>
+          <div class="takeout">
+            <p>Take out</p>
+            <input id="take_out" name="takeout" type="radio" value="Take away">
+            <label for="takeout">Take away</label>
+            <input id="eat_in" name="takeout" type="radio" value="Eat in">
+            <label for="takeout">Eat in</label>
+            <input id="both" name="takeout" type="radio" value="Both">
+            <label for="takeout">Both</label>
+          </div>
         </div>
-        <div class="takeout">
-          <p>Take out</p>
-          <input id="take_out" name="takeout" type="radio" value="Take Away">
-          <label for="takeout">Take away</label>
-          <input id="eat_in" name="takeout" type="radio" value="Eat in">
-          <label for="takeout">Eat in</label>
-          <input id="both" name="takeout" type="radio" value="Both">
-          <label for="takeout">Both</label>
+        <div class="part3-flex-col">
+          <label for="recommendations">Dish recommendations</label>
+          <input id="recommendations" name="recommendations" type="text" placeholder="ex: Lamen porc haché piquant"
+            value="Lamen porc haché piquant">
+          <label for="image">Image</label>
+          <input name="image" id="restaurant_img" type="file">
+
+          <button class="btn-send">Send</button>
         </div>
+      </form>
     </div>
-    <div class="part3-flex-col">
-      <label for="recommendations">Dish recommendations</label>
-      <input id="recommendations" name="recommendations" type="text" placeholder="ex: lamen porc haché piquant"
-        value="lamen porc haché piquant">
-      <label for="image">Image</label>
-      <input name="image" id="restaurant_img" type="file">
-
-      <button class="btn-send">Send</button>
-    </div>
-
-    </form>
   </div>
-</div>
 </div>

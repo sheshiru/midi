@@ -10,8 +10,7 @@ router.post("/admin-forms", uploadCloud.single("image"), (req, res) => {
     typeOfCuisine,
     recommendations,
     speed,
-    takeout,
-    image
+    takeout
   } = req.body;
   const newResto = {
     name,
@@ -19,13 +18,12 @@ router.post("/admin-forms", uploadCloud.single("image"), (req, res) => {
     typeOfCuisine,
     recommendations,
     speed,
-    takeout,
-    image
+    takeout
   };
   if (req.file) newResto.image = req.file.secure_url;
   Restaurant.create(newResto)
     .then(resto => {
-      res.redirect("/admin-forms", resto);
+      res.redirect("/admin-forms");
     })
     .catch(error => console.error("error creating restaurant:", error));
 });

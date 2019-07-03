@@ -1,7 +1,9 @@
-.contribute-wrapper {
+.contribute-wrapper,
+.admin-forms-wrapper {
   min-height: 100vh;
 }
-.contribute-page-title {
+.contribute-page-title,
+.admin-forms-page-title {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 2%;
@@ -13,7 +15,8 @@
   margin: auto;
   margin-bottom: 2%;
 }
-.user-form-frame {
+.user-form-frame,
+.admin-form-frame {
   background-color: #071716;
   width: 45vw;
   padding: 3%;
@@ -22,7 +25,8 @@
   align-items: center;
   margin: auto;
 }
-.user-form-container {
+.user-form-container,
+.admin-form-container {
   background-color: #f9f9f0;
   height: 95%;
   width: 95%;
@@ -40,17 +44,20 @@ FORM STYLE
   max-width: 400px;
 }
 
-#user_add_form label {
+#user_add_form label,
+#admin-add-form label {
   cursor: pointer;
   margin: 10px 0;
 }
 
-#user_add_form input {
+#user_add_form input,
+#admin-add-form input {
   border: 1px solid #071716;
   height: 32px;
 }
 
-#user_add_form input:last-of-type {
+#user_add_form input:last-of-type,
+#admin-add-form input:last-of-type {
   margin-bottom: 20px;
 }
 
