@@ -1,0 +1,53 @@
+<div class="admin-forms-wrapper">
+  <h1 class="admin-forms-page-title">Edit a restaurant in the database</h1>
+  <hr class="separator-horizontal">
+  <div class="admin-form-frame">
+    <div class="admin-form-container">
+
+
+      <form method="post" action="/editRestau/{{resto.id}}" id="admin-add-form" enctype="multipart/form-data">
+        <div class="part1-flex-col">
+          <label for="name">Restaurant name</label>
+          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="{{resto.name}}">
+
+          <label for="cuisine">Type of cuisine</label>
+          <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese"
+            value="{{resto.typeOfCuisine}}">
+
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" placeholder="ex: 13 rue de la Roquette"
+            value="{{resto.address}}">
+        </div>
+        <div class="part2-flex-row">
+          <div class="speed">
+            <p>Service speed</p>
+            <input type="radio" id="quick" name="speed" value="quick">
+            <label for="speed">Quick</label>
+            <input type="radio" id="medium" name="speed" value="medium">
+            <label for="speed">Medium</label>
+            <input type="radio" id="slow" name="speed" value="slow">
+            <label for="speed">Slow</label>
+          </div>
+          <div class="takeout">
+            <p>Take out</p>
+            <input id="take_out" name="takeout" type="radio" value="Take away">
+            <label for="takeout">Take away</label>
+            <input id="eat_in" name="takeout" type="radio" value="Eat in">
+            <label for="takeout">Eat in</label>
+            <input id="both" name="takeout" type="radio" value="Both">
+            <label for="takeout">Both</label>
+          </div>
+        </div>
+        <div class="part3-flex-col">
+          <label for="recommendations">Dish recommendations</label>
+          <input id="recommendations" name="recommendations" type="text" placeholder="ex: Lamen porc haché piquant"
+            value="">
+          <label for="image">Image</label>
+          <input name="image" id="restaurant_img" type="file">
+
+          <button class="btn-send">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
