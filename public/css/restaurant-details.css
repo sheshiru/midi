@@ -9,14 +9,6 @@
   margin-top: 50px;
 }
 
-#distance {
-
-  font-weight: bold;
-  position: absolute;
-  /* bottom: 220px;
-  right: 100px; */
-}
-
 .nameRestaurant {
   text-align: center;
   font-size: 2.5em;
@@ -79,9 +71,15 @@
 .map-container {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+
 }
 
 #map {
   width: 620px;
+}
+
+
+#distance {
+  display: inline;
+  font-weight: bold;
 }
