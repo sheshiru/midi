@@ -15,28 +15,34 @@ const comp = require("../models/Company");
 //       });
 //   });
 // }
-
 // getRandom();
 
 router.get("/random", (req, res) => {
   Restaurant.find()
 
     .then(dbRes => {
-      const company = comp.findById(req.query.companyId);
-      var randomIndex = Math.floor(Math.random() * dbRes.length);
-      var distanceRandom = getDistance(
-        [dbRes[randomIndex].address],
-        [dbRes[randomIndex].address],
-        distance => {
-          console.log(dbRes[randomIndex].address);
-          console.log(company.address);
-          res.render("random-restaurant", {
-            dbRes: dbRes[randomIndex],
-            distanceRandom,
-            navlayout: true
-          });
-        }
-      );
+      comp
+        .findOne({ _id: "5d1b7109f37ffc1d8fe36211" })
+        .then(company => {
+          getDistance(
+            [dbRes[randomIndex].address],
+            [company.address],
+            distance => {
+              console.log(dbRes[randomIndex].address);
+              console.log(distance);
+              res.render("random-restaurant", {
+                dbRes: dbRes[randomIndex],
+                distance,
+                navlayout: true
+              });
+            }
+          );
+        })
+        .catch(companyErr => {
+          console.log(companyErr);
+        });
+
+      const randomIndex = Math.floor(Math.random() * dbRes.length);
     })
     .catch(dbErr => console.log(dbErr));
 });

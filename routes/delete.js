@@ -2,12 +2,13 @@ const express = require("express");
 const router = new express.Router();
 const Restaurant = require("../models/Restaurant");
 
-router.get("/editRestau/:id", (req, res) => {
-  Restaurant.findById(req.params.id)
+router.get("/deleteRestau/:id", (req, res) => {
+  Restaurant.findByIdAndRemove(req.params.id)
     .then(resto => {
-      res.render("restaurant_edit", { resto });
+      console.log(resto);
+      res.redirect("/restaurants");
     })
-    .catch(err => console.error(err));
+    .catch(err => console.log(err));
 });
 
-router.post("/editRestau/:id", (req, res) => {});
+module.exports = router;
