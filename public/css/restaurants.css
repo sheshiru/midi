@@ -1,4 +1,30 @@
 .wrapper-restaurants {
   width: 100vw;
   background-color: #f9f9f0;
+  min-height: 100vh;
+}
+.restaurants-page-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left-sidebar {
+  width: 30%;
+  height: 100%;
+}
+.restaurants-container {
+  width: 70%;
+}
+.restaurants-title {
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+}
+.restaurants-grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.one-restaurant-container {
+  width: 30%;
 }
