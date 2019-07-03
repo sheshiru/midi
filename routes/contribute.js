@@ -7,26 +7,21 @@ router.get("/contribute", (req, res) => {
   res.render("contribute", { navlayout: true });
 });
 router.post(
-  "/useraddrestaurant",
+  "/user_add_restaurant",
   uploadCloud.single("restaurant_img"),
   (req, res) => {
-    const {
-      name,
-      typeOfcuisine,
-      address,
-      takeout,
-      recommendations,
-      restaurant_img
-    } = req.body;
+    const { name, typeOfcuisine, address, takeout, recommendations } = req.body;
+    console.log(takeout === "Take away");
+
     const newResto = {
       name,
       typeOfcuisine,
       address,
       takeout,
-      recommendations,
-      restaurant_img
+      recommendations
     };
-    if (req.file) newImg.restaurant_img = req.file.secure_url;
+
+    if (req.file) newResto.image = req.file.secure_url;
     console.log(newResto);
     Restaurant.create(newResto)
 

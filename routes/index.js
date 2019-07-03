@@ -49,10 +49,6 @@ router.get("/admin-forms", (req, res) => {
   res.render("admin-forms", { navlayout: true });
 });
 
-router.get("/contribute", (req, res) => {
-  res.render("contribute", { navlayout: true });
-});
-
 router.get("/wishlist", (req, res) => {
   res.render("wishlist", { navlayout: true });
 });
