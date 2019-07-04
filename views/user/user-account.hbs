@@ -1,8 +1,26 @@
 <h1>User account blablablaaaaaaa</h1>
 
+<<<<<<< HEAD
 {{#each user}}
 {{this.name}}
 {{this.lastname}}
 {{this.email}}
 {{/each}}
 
+=======
+<h1>hello </h1>
+<div>
+  {{#each users}}
+  <h2>{{this.name}}</h2>
+  {{this.lastName}}
+  {{this.email}}
+  {{/each}}
+</div>
+
+
+{{#unless isLoggedOut}}
+<a href="/logout">
+  <span class="btn-logout"><i class="fas fa-power-off"></i>Log Out</span>
+</a>
+{{/unless}}
+>>>>>>> 764b7fb157580f24aeed4503306d441ded84d648

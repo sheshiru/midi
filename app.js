@@ -19,6 +19,7 @@ const apiRouter = require("./routes/api-routes");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
+const favorites = require("./routes/favorites");
 const buttonClicked = require("./routes/buttonclicked");
 
 app.set("view engine", "hbs"); //
@@ -28,7 +29,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 60000 }, // in millisec
+    cookie: { maxAge: 6000000 }, // in millisec
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 // 1 day
@@ -37,6 +38,13 @@ app.use(
     resave: true
   })
 );
+
+function isLoggedIn(req, res, next) {
+  app.locals.isLoggedIn = Boolean(req.session.currentUser);
+  next();
+}
+
+app.use(isLoggedIn);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -50,6 +58,7 @@ app.use(randomRouter);
 app.use(editRestau);
 app.use(deleteRestau);
 app.use(userAccount);
+app.use(favorites);
 app.use(cookieParser());
 app.use(buttonClicked);
 

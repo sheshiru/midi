@@ -11,27 +11,32 @@ router.get("/login", (req, res) => {
   let bigWrapper = "wrapper-pages";
   res.render("auth/login", { navlayout: true, bigWrapper });
 });
+
 router.post("/login", (req, res) => {
   let bigWrapper = "wrapper-pages";
   const user = req.body;
-
+  console.log(req.body);
   if (!user.email || !user.password) {
+    console.log("FIELDS ARE EMPTY");
     return res.render("auth/login", {
       errorMessage: "Please fill in all the fields.",
       navlayout: true,
       bigWrapper
     });
   }
-
-  User.findOne({ usermail: user.email })
+  User.findOne({ email: req.body.email })
     .then(dbRes => {
-      if (!dbRes)
+      let bigWrapper = "wrapper-pages";
+      if (!dbRes) {
+        console.log("BAD INFOS");
         return res.render("auth/login", {
           msg: {
             text: "Bad email adress or password.",
             status: "error"
-          }
+          },
+          bigWrapper
         });
+      }
 
       if (bcrypt.compareSync(user.password, dbRes.password)) {
         console.log("ici");

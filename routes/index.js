@@ -2,20 +2,19 @@ const express = require("express");
 const router = new express.Router();
 const Company = require("../models/Company");
 const Restaurant = require("../models/Restaurant");
-// const User = require("../models/User");
+const guardRoute = require("./../utils/guard-route");
 const seeds = require("../bin/seeds");
 const getDistance = require("./google_distance");
 
 router.get(["/", "/home"], (req, res) => {
-  // let bigWrapper = "bg-home";
-  // let navbar = "navbar-home";
-  // let mainTitle = "midi";
   res.render("home", { navlayout: false });
 });
 
 router.get(
   ["/restaurants", "/restaurants/200", "/restaurants/800", "/restaurants/far"],
+  guardRoute,
   (req, res) => {
+    let oneUser = req.session.currentUser;
     let restauritos = [];
     let bigWrapper = "wrapper-restaurants";
     Restaurant.find({ verified: true })
@@ -32,7 +31,7 @@ router.get(
               const restu = JSON.parse(JSON.stringify(resto));
               restu.distance = distance;
               restauritos.push(restu);
-              console.log(restauritos);
+              // console.log(restauritos);
               if (restauritos.length === restos.length) {
                 if (req.url === "/restaurants/200") {
                   restauritos = restauritos.filter(oneResto => {
@@ -57,7 +56,8 @@ router.get(
                   company,
                   restos: restauritos,
                   bigWrapper,
-                  navlayout: true
+                  navlayout: true,
+                  oneUser
                 });
               }
             });

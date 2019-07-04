@@ -27,8 +27,14 @@ router.post(
     Restaurant.create(newResto)
 
       .then(newRest => {
+        let bigWrapper = "wrapper-pages";
         console.log(newRest);
-        res.redirect("/contribute");
+        res.render("contribute", {
+          successMsg:
+            "Thanks for your contribution! We'll check the infos and publish your suggestion very soon",
+          navlayout: true,
+          bigWrapper
+        });
       })
       .catch(error => console.error("error adding new restaurant:", error));
   }
