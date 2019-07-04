@@ -39,22 +39,17 @@
     </div>
   </aside>
 
-
-
   <div class="restaurants-container">
     <h1 class="restaurants-title">Recommended Restaurants</h1>
     <div class="restaurants-grid">
       {{#each restos}}
       <div class="one-restaurant-container">
-
-        <div class="restaurants-image"><img src="{{this.image}}" alt="restaurant image"> <a
-            href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail"></a></div>
-        <h2 class="restaurants-name">{{this.name}}</h2>
-        <p class="restaurants-distance">{{this.distance}}</p>
-        <p class="restaurants-favs">{{this.favorites.length}}<i class="far fa-heart"></i></p>
+        <a href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail">
+          <div class="restaurants-image"><img src="{{this.image}}" alt="restaurant image"></div>
+          <h2 class="restaurants-name">{{this.name}}</h2>
+          <p class="restaurants-distance">{{this.distance}}</p>
+          <p class="restaurants-favs">{{this.favorites.length}}<i class="far fa-heart"></i></p>
         </a>
-      </div>
-      {{/each}}
-    </div>
+      </div>{{/each}}</div>
   </div>
 </div>
