@@ -12,7 +12,7 @@
 .wrapper-restaurants {
   width: 100vw;
   max-width: 100vw;
-  background-color: #f9f9f0;
+  background-color: #fffff8;
   min-height: 100vh;
   border: 40px solid;
   border-left-color: #1d4244;
@@ -39,7 +39,7 @@
 
 .left-sidebar:after {
   content: "";
-  border-right: 1px solid black;
+  border-right: 1px solid #071716;
   height: 50%;
   width: 19%;
   position: absolute;
@@ -165,7 +165,7 @@ h1.restaurants-title {
 
 .cgu,
 .ml {
-  color: #f9f9f0;
+  color: #fffff8;
 }
 
 .fas.fa-heart {
