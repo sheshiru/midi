@@ -19,7 +19,7 @@
 .admin-form-frame {
   background-color: #071716;
   width: 45vw;
-  padding: 3%;
+  /* padding: 3%; */
   display: flex;
   justify-content: center;
   align-items: center;

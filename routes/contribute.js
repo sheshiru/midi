@@ -4,7 +4,8 @@ const Restaurant = require("../models/Restaurant");
 const uploadCloud = require("../config/cloudinary.js");
 
 router.get("/contribute", (req, res) => {
-  res.render("contribute", { navlayout: true });
+  let bigWrapper = "wrapper-pages";
+  res.render("contribute", { navlayout: true, bigWrapper });
 });
 router.post(
   "/user_add_restaurant",

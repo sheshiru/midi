@@ -10,7 +10,7 @@
     <form method="post" action="/signup" id="signup_form">
       <div class="signup-form-content">
         <label for="name">Name</label>
-        <input type="text" name="username" class="input" placeholder="Beber" required>
+        <input type="text" name="name" class="input" placeholder="Beber" required>
         <label for="email">Email</label>
         <input type="email" name="email" class="input" placeholder="beber@noob.com" required>
         <label for="password">Password</label>
@@ -20,7 +20,7 @@
         <label for="seniority">Seniority in the company</label>
         <input type="date" name="seniority" class="input" placeholder="2002">
         <label for="member">Midi Member since</label>
-        <input type="date" name="member" class="input" placeholder="2003">
+        <input type="date" name="memberSince" class="input" placeholder="2003">
         <label for="photo">upload a photo</label>
         <input type="file" class="input" name="photo">
         {{#if errorMessage}}

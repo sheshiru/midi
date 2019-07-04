@@ -1,35 +1,29 @@
-// const express = require("express");
-// const router = express.Router();
-
-// router.get("/signup", (req, res) => {
-//   res.render("auth/signup", { navlayout: true });
-// });
-// router.get("/login", (req, res) => {
-//   let bigWrapper = "wrapper-login";
-//   res.render("auth/login", { navlayout: true, bigWrapper });
-// });
 // router.get("/account", (req, res) => {
 //   res.render("auth/user-account", { navlayout: true });
 // });
-
-// module.exports = router;
 
 const express = require("express");
 const router = new express.Router();
 const bcrypt = require("bcrypt");
 const User = require("./../models/User.js");
 
+router.get("/login", (req, res) => {
+  let bigWrapper = "wrapper-pages";
+  res.render("auth/login", { navlayout: true, bigWrapper });
+});
 router.post("/login", (req, res) => {
   const user = req.body;
 
   if (!user.email || !user.password) {
-    return res.render("login", { errorMsg: "Please fill in all the fields." });
+    return res.render("auth/login", {
+      errorMessage: "Please fill in all the fields."
+    });
   }
 
   User.findOne({ usermail: user.email })
     .then(dbRes => {
       if (!dbRes)
-        return res.render("login", {
+        return res.render("auth/login", {
           msg: {
             text: "Bad email adress or password.",
             status: "error"
@@ -40,7 +34,7 @@ router.post("/login", (req, res) => {
         req.session.currentUser = dbRes;
         return res.redirect("/");
       } else
-        return res.render("login", {
+        return res.render("auth/login", {
           msg: {
             text: "Bad email adress or password.",
             status: "error"
@@ -52,10 +46,16 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.get("/signup", (req, res) => {
+  let bigWrapper = "wrapper-pages";
+  res.render("auth/signup", { navlayout: true, bigWrapper });
+});
+
 router.post("/signup", (req, res, next) => {
   // return console.log(req.body);
 
   const newUser = req.body; // so req.body contains the submited informations (out of the post)
+  console.log(newUser.email);
 
   if (
     !newUser.name ||
@@ -63,7 +63,7 @@ router.post("/signup", (req, res, next) => {
     !newUser.email ||
     !newUser.password
   ) {
-    res.render("signup", {
+    res.render("auth/signup", {
       msg: {
         text: "All fields are required.",
         status: "warning"
@@ -74,7 +74,7 @@ router.post("/signup", (req, res, next) => {
     User.findOne({ email: newUser.email })
       .then(dbRes => {
         if (dbRes) {
-          res.render("signup", {
+          res.render("auth/signup", {
             msg: {
               text: "User already exists !",
               status: "warning"
@@ -88,17 +88,28 @@ router.post("/signup", (req, res, next) => {
         newUser.password = hashed;
 
         User.create(newUser)
-          .then(() => {
+          .then(dbRes => {
+            console.log("hey", dbRes);
             req.session.msg = {
               text: "You signed up successfully !",
               status: "success"
             };
-            res.redirect("/signin");
+            res.redirect("/");
           })
           .catch(err => console.log(err));
       })
       .catch(dbErr => next(dbErr));
   }
+});
+
+//-------------------------------------------------------
+// LOGOUT PART
+//-------------------------------------------------------
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(err => {
+    // can't access session here
+    res.redirect("/login");
+  });
 });
 
 module.exports = router;
