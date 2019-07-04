@@ -36,12 +36,13 @@ function displayRestos(restos) {
   heart =>
     (heart.onclick = function(evt) {
       const restauId = this.getAttribute("data-restauId");
-
-      heart.classList.remove("far");
-
+      if (this.classList.contains("fas")) {
+        heart.classList.remove("far");
+      }
       heart.classList.add("fas");
     })
 );
+//
 
 button.addEventListener("click", function(e) {
   e.preventDefault();
