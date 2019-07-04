@@ -12,11 +12,14 @@ router.get("/login", (req, res) => {
   res.render("auth/login", { navlayout: true, bigWrapper });
 });
 router.post("/login", (req, res) => {
+  let bigWrapper = "wrapper-pages";
   const user = req.body;
 
   if (!user.email || !user.password) {
     return res.render("auth/login", {
-      errorMessage: "Please fill in all the fields."
+      errorMessage: "Please fill in all the fields.",
+      navlayout: true,
+      bigWrapper
     });
   }
 
@@ -31,15 +34,20 @@ router.post("/login", (req, res) => {
         });
 
       if (bcrypt.compareSync(user.password, dbRes.password)) {
+        console.log("ici");
+
         req.session.currentUser = dbRes;
+        console.log(dbRes);
+
         return res.redirect("/");
-      } else
-        return res.render("auth/login", {
-          msg: {
-            text: "Bad email adress or password.",
-            status: "error"
-          }
-        });
+      } else console.log("pas bon");
+
+      return res.render("auth/login", {
+        msg: {
+          text: "Bad email adress or password.",
+          status: "error"
+        }
+      });
     })
     .catch(dbErr => {
       next(dbErr);
@@ -86,15 +94,14 @@ router.post("/signup", (req, res, next) => {
         const salt = bcrypt.genSaltSync(10);
         const hashed = bcrypt.hashSync(newUser.password, salt);
         newUser.password = hashed;
-
         User.create(newUser)
           .then(dbRes => {
-            console.log("hey", dbRes);
+            console.log("hey", req.session);
             req.session.msg = {
               text: "You signed up successfully !",
               status: "success"
             };
-            res.redirect("/");
+            res.redirect("/restaurants");
           })
           .catch(err => console.log(err));
       })

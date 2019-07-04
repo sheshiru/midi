@@ -13,7 +13,7 @@ LOG IN FORM
 .input {
   padding: 0.7rem;
   border: none;
-  border: 1px solid black;
+  border: 1px solid #071716;
   border-radius: 0.2rem;
   font-size: 0.9rem;
 }
@@ -53,7 +53,6 @@ LOG IN FORM
   /* background-color: #4e4e24; */
   border-radius: 0.2rem;
   height: 95%;
-  padding: 3%;
   width: 30vw;
   display: flex;
   justify-content: center;
@@ -93,8 +92,14 @@ LOG IN FORM
 
 .btn-login,
 .btn-signup {
+  text-align: center;
   padding: 3% 3%;
   border-radius: 0.2rem;
+  border: 2px solid #071716;
+}
+.btn-login:active,
+.btn-signup:active {
+  transform: translateY(3px);
 }
 
 .button-link-signup {
