@@ -1,0 +1,114 @@
+.bg-home {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/medias/img/home-bg.png);
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* .main-title {
+  display: flex;
+  font-size: 8.5rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} */
+.hr-container {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 42vh;
+  left: 54%;
+}
+
+.vertical-hr {
+  border: none;
+  border-left: 1px solid #f9f9f0;
+  height: 20vh;
+  width: 1px;
+  margin: 0;
+}
+
+.flex-center-vertical {
+  display: flex;
+  align-items: center;
+  height: 89vh;
+  width: 100vw;
+  /* border: 1px solid yellow; */
+}
+
+.home-text-container {
+  display: flex;
+  width: 100vw;
+  min-width: 30%;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+  align-items: center;
+  padding-right: 6%;
+}
+
+.home-text-container p {
+  font-size: 1.2rem;
+  border-radius: 3px;
+  width: 30%;
+  background-color: #f9f9f0;
+  padding: 6% 5%;
+  text-align: justify;
+}
+
+.btn-see-all {
+  border-radius: 3px;
+  /* margin-top: 8%; */
+  padding: 3% 3%;
+  width: 80%;
+  margin: 8% auto 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: #cb2b04;
+  color: #f9f9f0;
+}
+
+.btn-see-all:hover {
+  background-color: #e1430c;
+}
+
+.btn-see-all:active {
+  transform: translateY(3px);
+}
+
+/* -------------------------------------------------------------------------------- */
+/*  ABOUT
+ -------------------------------------------------------------------------------- */
+.about {
+  height: 300px;
+  background-color: #f9f9f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 4% auto;
+}
+
+.about-title {
+  font-size: 150%;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  width: 20%;
+  /* border: 2px solid #071716;
+  border-radius: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  color: #071716;
+  font-size: 120%;
+  text-align: justify;
+}

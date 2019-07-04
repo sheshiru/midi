@@ -37,19 +37,16 @@
   <p id="isItFast"> Have you been to that restaurant? How fast was the service?</p>
 
 
-  <div class="speedContainerButtons">
+  <div class="speedContainerButtons" data-id="{{resto._id}}">
     <input type="radio" id="speed1" name="speed" value="slow">
     <label for="speed1">Slow</label>
 
-    <input type="radio" id="speed2" name="speed" value="medium">
+    <input type="radio" id="speed2" name="speed" value="medium" checked>
     <label for="speed2">Medium</label>
 
     <input type="radio" id="speed3" name="speed" value="quick">
     <label for="speed3">Fast</label>
   </div>
-
-
-
 
   <div class="sendButtonContainer">
     <button class="sendButton" type="submit">

@@ -1,0 +1,65 @@
+{{!-- SIDEBAR --}}
+<div class="restaurants-page-container">
+  <input id="company_id" type="hidden" value="{{company._id}}">
+
+  <aside class="left-sidebar">
+
+    <div class="sidebar-div">
+      <h2 id="sidebar-main-title">Filter by:</h2>
+    </div>
+
+    <div class="sidebar-div">
+
+      <h3 class="sidebar-title">Type of food</h3>
+      <ul class="sidebar-list" id="cuisine-list">
+        <li class="cuisine-list-item"><a href="/restaurants/tag/Chicken">Chicken</a></li>
+        <li class="cuisine-list-item"><a href="/restaurants/tag/Chinese">Chinese</a></li>
+        <li class="cuisine-list-item"><a href="/restaurants/tag/French">French</a></li>
+        <li class="cuisine-list-item"><a href="/restaurants/tag/Thai">Thai</a></li>
+        <li class="cuisine-list-item"><a href="/restaurants/tag/Vietnamese">Vietnamese</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-div">
+      <h3 class="sidebar-title">Speed</h3>
+      <ul class="sidebar-list">
+        <li class="speed-list-item"><a href="/restaurants/speed/fast">Fast</a></li>
+        <li class="speed-list-item"><a href="/restaurants/speed/medium">Medium</a></li>
+        <li class="speed-list-item"><a href="/restaurants/speed/slow">Slow</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-div">
+      <h3 class="sidebar-title">Distance</h3>
+      <ul class="sidebar-list">
+        <li class="distance-list-item"><a href="/restaurants/200">Less than 200m</a></li>
+        <li class="distance-list-item"><a href="/restaurants/800">Less than 800m</a></li>
+        <li class="distance-list-item"><a href="/restaurants/far">800m and further</a></li>
+      </ul>
+    </div>
+    <div id="searchbar" class="sidebar-div">
+      <input type="text" id="filter-restos" placeholder="Search..." class="input">
+    </div>
+    <div class="sidebar-div">
+      <a href="/restaurants">
+        <h3 class="sidebar-title" id="remove-filters">Remove filters</h3>
+      </a>
+    </div>
+  </aside>
+
+  <div class="restaurants-container">
+    <h1 class="restaurants-title">Recommended Restaurants</h1>
+    <div class="restaurants-grid">
+      {{#each restos}}
+      <div class="one-restaurant-container">
+        <div class="restaurants-image">
+          <a href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail">
+            <img src="{{this.image}}" alt="restaurant image">
+          </a>
+        </div>
+        <div class="names-and-likes">
+          <h2 class="restaurants-name">{{this.name}}</h2>
+          <p class="restaurants-favs">{{this.favorites.length}} <i class="far fa-heart likes-heart"></i></p>
+        </div>
+        <p class="restaurants-distance">{{this.distance}}</p>
+      </div>{{/each}}</div>
+  </div>
+</div>
