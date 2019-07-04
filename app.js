@@ -19,6 +19,7 @@ const apiRouter = require("./routes/api-routes");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require("cookie-parser");
+const buttonClicked = require("./routes/buttonclicked");
 
 app.set("view engine", "hbs"); //
 app.set("views", __dirname + "/views"); //
@@ -50,6 +51,9 @@ app.use(editRestau);
 app.use(deleteRestau);
 app.use(userAccount);
 app.use(cookieParser());
+app.use(buttonClicked);
+
+let db;
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it

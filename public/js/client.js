@@ -1,6 +1,22 @@
 const input = document.getElementById("filter-restos");
 const gridRestau = document.querySelector(".restaurants-grid");
 const url = "/api/search/resto";
+const meta = document.getElementById("site_url");
+const siteUrl = meta.getAttribute("data-url");
+const button = document.querySelector(".sendButton");
+
+button.addEventListener("click", function(e) {
+  e.preventDefault();
+  const resto_id = document
+    .querySelector(".speedContainerButtons")
+    .getAttribute("data-id");
+  axios
+    .post(`${siteUrl}/api/restaurant/${resto_id}`, {
+      speed: document.querySelector("[name=speed]:checked").value
+    })
+    .then(dbRes => console.log(dbRes))
+    .catch(dbErr => console.log(dbErr));
+});
 
 input.onkeyup = evt => filterRestos(evt.target.value);
 
