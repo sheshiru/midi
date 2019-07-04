@@ -52,6 +52,29 @@ router.get("/restaurants", (req, res) => {
     .catch(err => console.error(err));
 });
 
+router.get("/restaurants/tag/:typeOfCuisine", (req, res) => {
+  let bigWrapper = "wrapper-restaurants";
+  Restaurant.find({ typeOfCuisine: req.params.typeOfCuisine, verified: true })
+    .then(restos => {
+      res.render("restaurants", { restos, navlayout: true, bigWrapper });
+    })
+    .catch(err => console.error(err));
+});
+
+// FUNCTION BELOW NOT WORKING: WHAT DO WE DO ABOUT THE SPEED?
+router.get("/restaurants/speed/:speed", (req, res) => {
+  let bigWrapper = "wrapper-restaurants";
+  Restaurant.find({ speed: req.params.speed, verified: true })
+    .then(restos => {
+      res.render("restaurants", { restos, navlayout: true, bigWrapper });
+    })
+    .catch(err => console.error(err));
+});
+
+router.get("/restaurants/distance/:distance", (req, res) => {
+  let bigWrapper = "wrapper-restaurants";
+});
+
 router.get("/admin-forms", (req, res) => {
   res.render("admin-forms", { navlayout: true });
 });
@@ -77,5 +100,3 @@ router.get("/favorites", (req, res) => {
 //   .catch(err => console.log("error adding user:", err));
 
 module.exports = router;
-
-function addDistance(array, company, clbk) {}
