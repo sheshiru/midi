@@ -129,6 +129,11 @@
   width: 622px;
 }
 
+#map1 {
+  width: 622px;
+  margin-bottom: 50px;
+}
+
 #distance {
   display: inline;
   font-weight: bold;
