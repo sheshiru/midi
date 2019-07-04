@@ -16,11 +16,26 @@ const editRestau = require("./routes/edit");
 const deleteRestau = require("./routes/delete");
 const userAccount = require("./routes/user-account");
 const apiRouter = require("./routes/api-routes");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const cookieParser = require("cookie-parser");
 
 app.set("view engine", "hbs"); //
 app.set("views", __dirname + "/views"); //
 app.use(express.static("public"));
 hbs.registerPartials(__dirname + "/views/partials");
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 60000 }, // in millisec
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    }),
+    saveUninitialized: true,
+    resave: true
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,6 +49,7 @@ app.use(randomRouter);
 app.use(editRestau);
 app.use(deleteRestau);
 app.use(userAccount);
+app.use(cookieParser());
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
