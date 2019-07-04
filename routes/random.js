@@ -25,7 +25,7 @@ router.get("/random", (req, res) => {
       const randomIndex = Math.floor(Math.random() * dbRes.length);
       console.log(dbRes[randomIndex].address);
       comp
-        .findOne({ _id: "5d1c794f0dd3544041d6e5dd" })
+        .findOne({ _id: "5d1b7109f37ffc1d8fe36211" })
         .then(company => {
           console.log(company);
           getDistance(

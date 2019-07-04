@@ -11,32 +11,15 @@
 
   <div class="resto-right-container">
 
-    <p id="typeOfFood">Type of food: {{resto.typeOfCuisine}}</p>
+    <p id="typeOfFood">Type of food:</p> {{resto.typeOfCuisine}}
     <h2 id="coworkers_recommend">Your coworkers recommend:</h2>
     <ul>
       {{#each resto.recommendations as |recommendation|}}
       <li>{{recommendation}}</li>
       {{/each}}
     </ul>
-    <form>
-      <p id="isItFast"> Have you been to that restaurant? How fast was the service?</p>
-      <div>
-        <input type="radio" id="speed1" name="speed" value="slow">
-        <label for="speed1">Slow</label>
 
-        <input type="radio" id="speed2" name="speed" value="medium">
-        <label for="speed2">Medium</label>
-
-        <input type="radio" id="speed3" name="speed" value="quick">
-        <label for="speed3">Quick</label>
-      </div>
-      <div class="sendButtonContainer">
-        <button class="sendButton" type="submit">
-          Send
-
-        </button>
-      </div>
-    </form>
+    <p id="speedRate"> Your collegues have found this restaurant to be : </p> {{resto.speed}} !
   </div>
 </div>
 
@@ -45,10 +28,38 @@
 
   <span id="distance">It's {{this.distance}} away !</span></div>
 <div class="map-container">
-  <iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=
-    &q={{resto.address}}" frameborder="0" style="border:0" allowfullscreen></iframe>
+  <iframe id="map" src="https://www.google.com/maps/embed/v1/place?key={{api_key}}&q={{resto.address}}" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
 
 </div>
+
+<form>
+  <p id="isItFast"> Have you been to that restaurant? How fast was the service?</p>
+
+
+  <div class="speedContainerButtons">
+    <input type="radio" id="speed1" name="speed" value="slow">
+    <label for="speed1">Slow</label>
+
+    <input type="radio" id="speed2" name="speed" value="medium">
+    <label for="speed2">Medium</label>
+
+    <input type="radio" id="speed3" name="speed" value="quick">
+    <label for="speed3">Fast</label>
+  </div>
+
+
+
+
+  <div class="sendButtonContainer">
+    <button class="sendButton" type="submit">
+      Send
+
+    </button>
+  </div>
+</form>
+
+
 <div class="buttonsEditContainer">
 
 

@@ -35,6 +35,7 @@ app.use(userAccount);
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
+app.locals.api_key = process.env.API_KEY;
 
 app.use(function(req, res, next) {
   res

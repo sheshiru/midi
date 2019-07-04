@@ -12,6 +12,8 @@
 .nameRestaurant {
   text-align: center;
   font-size: 2.5em;
+
+
 }
 
 .image_onerestaurant {
@@ -36,14 +38,45 @@
   margin-top: 8px;
 }
 
+
+
+
+
 .sendButtonContainer {
   display: flex;
   justify-content: center;
 }
 
 .sendButton {
-  width: 30%;
+  width: 80px;
   margin-top: 10px;
+  background: transparent;
+  border: 2px solid #1d4244;
+  border-radius: 12px;
+  padding: 1px 3px;
+}
+
+.sendButton:hover {
+  cursor: pointer;
+  background: #116B64;
+  transition-duration: 0.2s;
+  color: white;
+}
+
+
+
+.speedContainerButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+
+#speed1,
+#speed2,
+#speed3 {
+  margin-right: 7px;
+  margin-left: 10px;
 }
 
 .resto-left-container {
@@ -57,19 +90,27 @@
 }
 
 #typeOfFood {
-  margin-bottom: 10px;
+  margin-top: 5px;
   font-weight: bold;
 }
 
 #coworkers_recommend {
+  margin-top: 10px;
   text-align: justify;
 }
 
-#isItFast {
+#speedRate {
   margin-top: 10px;
-  margin-bottom: 10px;
+
+  font-weight: bold;
+}
+
+#isItFast {
+  margin-top: 40px;
+  margin-bottom: 15px;
   font-weight: bold;
   text-align: justify;
+  text-align: center;
 }
 
 .map-container {
@@ -85,7 +126,7 @@
 }
 
 #map {
-  width: 630px;
+  width: 622px;
 }
 
 #distance {
