@@ -1,4 +1,18 @@
 .footer {
-  height: 100px;
+  height: 70px;
   background-color: #071716;
+  color: #f9f9f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-right {
+  display: flex;
+  justify-items: space-between;
+}
+
+.copyright-container {
+  margin-left: 40px;
 }
