@@ -20,10 +20,11 @@ router.post("/admin-forms", uploadCloud.single("image"), (req, res) => {
     speed,
     takeout
   };
+  newResto.verified = true;
   if (req.file) newResto.image = req.file.secure_url;
   Restaurant.create(newResto)
     .then(resto => {
-      res.redirect("/admin-forms");
+      res.redirect("/restaurants");
     })
     .catch(error => console.error("error creating restaurant:", error));
 });

@@ -1,3 +1,62 @@
+const input = document.getElementById("filter-restos");
+const gridRestau = document.querySelector(".restaurants-grid");
+const url = "/api/search/resto";
+
+input.onkeyup = evt => filterRestos(evt.target.value);
+
+function filterRestos(value) {
+  axios
+    .get(`${url}?search=${value}`)
+    .then(apiRes => {
+      const restos = Object.values(apiRes.data);
+      displayRestos(apiRes.data);
+      console.log(apiRes);
+    })
+    .catch(apiErr => console.error(apiErr));
+}
+
+function displayRestos(restos) {
+  function renderTemplate(infos) {
+    return `<div class="one-restaurant-container">
+    <a href="/restaurant/${
+      infos._id
+    }?companyId=5d1b6d658bf6a50266175b84" class="individual-thumbnail">
+      <div class="restaurants-image"><img src="${
+        infos.image
+      }" alt="restaurant image"></div>
+      <h2 class="restaurants-name">${infos.name}</h2>
+      <p class="restaurants-favs">${
+        infos.favorites.length
+      }<i class="far fa-heart"></i></p>
+    </a>
+  </div>`;
+  }
+
+  gridRestau.innerHTML = "";
+
+  restos.forEach((resto, i) => {
+    console.log(resto);
+    gridRestau.innerHTML += renderTemplate(resto);
+  });
+}
+
+// displayStates(states);
+// input.onkeyup = evt => filterStates(evt.target.value, states);
+// })
+// .catch(APIErr => console.log(APIErr));
+
+// function displayStates(states) {
+// states.forEach((state) => list.innerHTML += `<li class="item state">${state}</li>`);
+// }
+
+// function filterStates(value, states) {
+// let statesFiltered = states.filter(function (state) {
+// return state.toLowerCase().includes(value.toLowerCase());
+// });
+// list.innerHTML = "";
+// displayStates(statesFiltered);
+// }
+
 // var popup = document.getElementById("cguPopup");
 // // Get the button that opens the popup
 // var btnCGU = document.querySelector(".cgu");

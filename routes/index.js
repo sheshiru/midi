@@ -53,6 +53,7 @@ router.get(
                   });
                 }
                 res.render("restaurants", {
+                  needsAxios: true,
                   company,
                   restos: restauritos,
                   bigWrapper,
@@ -81,34 +82,6 @@ router.get("/restaurants/speed/:speed", (req, res) => {
   let bigWrapper = "wrapper-restaurants";
   Restaurant.find({ speed: req.params.speed, verified: true })
     .then(restos => {
-      res.render("restaurants", { restos, navlayout: true, bigWrapper });
-    })
-    .catch(err => console.error(err));
-});
-
-router.get("/restaurants/distance/200", (req, res) => {
-  let bigWrapper = "wrapper-restaurants";
-  Restaurant.find({ distance: { $lte: 200 } })
-    .then(restos => {
-      res.render("restaurants", { restos, navlayout: true, bigWrapper });
-    })
-    .catch(err => console.error(err));
-});
-
-router.get("/restaurants/distance/800", (req, res) => {
-  let bigWrapper = "wrapper-restaurants";
-  Restaurant.find({ distance: { $lte: 800 } })
-    .then(restos => {
-      res.render("restaurants", { restos, navlayout: true, bigWrapper });
-    })
-    .catch(err => console.error(err));
-});
-
-router.get("/restaurants/distance/far", (req, res) => {
-  let bigWrapper = "wrapper-restaurants";
-  Restaurant.find({ distance: { $gt: 800 } })
-    .then(restos => {
-      console.log(restos);
       res.render("restaurants", { restos, navlayout: true, bigWrapper });
     })
     .catch(err => console.error(err));

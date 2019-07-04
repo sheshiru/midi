@@ -15,6 +15,7 @@ const randomRouter = require("./routes/random");
 const editRestau = require("./routes/edit");
 const deleteRestau = require("./routes/delete");
 const userAccount = require("./routes/user-account");
+const apiRouter = require("./routes/api-routes");
 
 app.set("view engine", "hbs"); //
 app.set("views", __dirname + "/views"); //
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(basePageRouter);
 app.use("/", authRouter);
+app.use("/api", apiRouter);
 app.use(restaurantsRouter);
 app.use(contributeRouter);
 app.use(adminFormRouter);
