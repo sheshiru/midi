@@ -2,7 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const Company = require("../models/Company");
 const Restaurant = require("../models/Restaurant");
-const User = require("../models/User");
+// const User = require("../models/User");
 const seeds = require("../bin/seeds");
 const getDistance = require("./google_distance");
 

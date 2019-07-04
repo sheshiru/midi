@@ -31,6 +31,14 @@
   height: 100%;
   /* border: 2px solid yellowgreen; */
 }
+#vertical_line {
+  height: 40vh;
+  width: 1px;
+  position: relative;
+  left: 222.5px;
+  top: 30px;
+  border-left: 1px solid black;
+}
 .restaurants-container {
   width: 70%;
 }
