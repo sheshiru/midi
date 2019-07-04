@@ -42,7 +42,8 @@
   height: 60%;
   width: 19%;
   position: absolute;
-  margin-top: 12vh;
+  margin-top: 5%;
+  z-index: 1;
 }
 
 #sidebar-main-title {
@@ -55,6 +56,7 @@
 
 .sidebar-div {
   margin: 10px 0;
+  z-index: 10;
 }
 
 #searchbar input {
@@ -68,6 +70,7 @@
 .restaurants-container {
   width: 70%;
 }
+
 h1.restaurants-title {
   color: #f37226;
   font-size: 1.5rem;
@@ -76,8 +79,7 @@ h1.restaurants-title {
   text-underline-position: under;
 }
 .restaurants-image {
-  width: 250px;
-  height: 170px;
+  height: 158px;
   cursor: pointer;
 }
 
@@ -86,13 +88,12 @@ h1.restaurants-title {
 }
 .restaurants-grid {
   display: flex;
-  justify-content: safe;
-  align-items: center;
   flex-wrap: wrap;
 }
 .one-restaurant-container {
   width: 30%;
-  margin: 1% auto 2% 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -101,11 +102,11 @@ h1.restaurants-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3% 7% 2% 0;
+  padding: 3% 1% 2% 0;
 }
 
-.fa-heart {
-  color: rgba(255, 0, 0, 0.884);
+.likes-heart {
+  color: rgba(255, 0, 0, 0.767);
 }
 
 /* The popup (background) */
