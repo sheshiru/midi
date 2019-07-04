@@ -60,7 +60,7 @@
 }
 
 .btn-see-all {
-  border-radius: 5px;
+  border-radius: 3px;
   /* margin-top: 8%; */
   padding: 3% 3%;
   width: 80%;
@@ -68,12 +68,14 @@
   display: block;
   text-align: center;
   font-size: 1.8rem;
-  background-color: #cf5c19;
+  background-color: #CB2B04;
   color: #f9f9f0;
 }
+
 .btn-see-all:hover {
-  background-color: #f37226;
+  background-color: #E1430C;
 }
+
 .btn-see-all:active {
   transform: translateY(3px);
 }

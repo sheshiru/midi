@@ -4,12 +4,14 @@
   /* border: 1px solid red; */
   height: 90px;
 }
+
 .auth-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
 }
+
 .links-container {
   /* border: 1px solid green; */
   width: 17%;
@@ -19,18 +21,21 @@
   align-items: center;
   color: #f9f9f0;
 }
+
 .login-link {
   margin-right: 10px;
 }
+
 .login-link:hover {
   font-size: 1.2rem;
   text-decoration: underline;
-  text-decoration-color: #f37226;
+  text-decoration-color: #CB2B04;
   text-underline-position: under;
 }
+
 .signup-link:hover {
   font-size: 1.2rem;
   text-decoration: underline;
-  text-decoration-color: #f37226;
+  text-decoration-color: #CB2B04;
   text-underline-position: under;
 }

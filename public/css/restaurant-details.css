@@ -1,5 +1,5 @@
 .wrapper-restaurant-detail {
-  background-color: #f9f9f0;
+  background-color: #FFFFF8;
   min-height: 100vh;
 }
 
@@ -12,13 +12,11 @@
 .nameRestaurant {
   text-align: center;
   font-size: 2.5em;
-
-
 }
 
 .image_onerestaurant {
   height: 300px;
-  width: 400px;
+  width: 320px;
   display: flex;
   justify-content: center;
 }
@@ -34,6 +32,7 @@
 }
 
 .fa-heart.lea {
+  margin-right: 40px;
   color: red;
   margin-top: 8px;
 }
@@ -80,13 +79,13 @@
 }
 
 .resto-left-container {
-  width: 330px;
+  width: 360px;
   height: 230px;
-  margin-right: 50px;
+
 }
 
 .resto-right-container {
-  width: 240px;
+  width: 260px;
 }
 
 #typeOfFood {
@@ -126,11 +125,11 @@
 }
 
 #map {
-  width: 622px;
+  width: 623px;
 }
 
 #map1 {
-  width: 622px;
+  width: 623px;
   margin-bottom: 50px;
 }
 

@@ -24,6 +24,7 @@
   /* height: 80%; */
   width: 130px;
 }
+
 .logo-pic {
   display: block;
 }
@@ -48,9 +49,10 @@
 .pages-navlinks-container a {
   font-size: 1.1rem;
 }
+
 .pages-navlinks-container a:hover {
   text-decoration: underline;
-  text-decoration-color: #f37226;
+  text-decoration-color: #CB2B04;
   text-underline-position: under;
   font-size: 1.2rem;
 }
@@ -71,6 +73,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .user-account-link .far,
 .favorites-link .far,
 .wishlist-link .fas {
