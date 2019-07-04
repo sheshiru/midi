@@ -1,6 +1,9 @@
 const input = document.getElementById("filter-restos");
 const gridRestau = document.querySelector(".restaurants-grid");
 const url = "/api/search/resto";
+const meta = document.getElementById("site_url");
+const siteUrl = meta.getAttribute("data-url");
+const allHearts = document.getElementsByClassName("fa-heart");
 
 input.onkeyup = evt => filterRestos(evt.target.value);
 
@@ -39,6 +42,18 @@ function displayRestos(restos) {
     gridRestau.innerHTML += renderTemplate(resto);
   });
 }
+
+[...allHearts].forEach(
+  // spread allHearts to transform our HTML collection into an array
+  heart =>
+    (heart.onclick = function(evt) {
+      const restauId = this.getAttribute("data-restauId");
+      if (this.classList.contains("fas")) {
+        heart.classList.remove("far");
+      }
+      heart.classList.add("fas");
+    })
+);
 
 // displayStates(states);
 // input.onkeyup = evt => filterStates(evt.target.value, states);

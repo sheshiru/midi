@@ -1,5 +1,6 @@
 <h1>User account</h1>
 
+<h1>hello </h1>
 <div>
   {{#each users}}
   <h2>{{this.name}}</h2>
@@ -7,3 +8,10 @@
   {{this.email}}
   {{/each}}
 </div>
+
+
+{{#unless isLoggedOut}}
+<a href="/logout">
+  <span class="btn-logout"><i class="fas fa-power-off"></i>Log Out</span>
+</a>
+{{/unless}}

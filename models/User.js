@@ -14,7 +14,7 @@ const userSchema = new Schema({
     type: String,
     default: "https://www.whittierfirstday.org/our-team/default-user-image/"
   },
-  favorites: { type: Schema.Types.ObjectId, ref: "Restaurant" },
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Restaurant" }],
   wishlist: { type: Schema.Types.ObjectId, ref: "Restaurant" },
   admin: Boolean
 });

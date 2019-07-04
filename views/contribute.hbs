@@ -43,7 +43,9 @@
             value="lamen porc haché piquant">
           <label for="restaurant_img">Image</label>
           <input name="restaurant_img" id="restaurant_img" type="file">
-
+          {{#if successMsg}}
+          <div class="success-message">{{successMsg}}</div>
+          {{/if}}
           <button class="btn-send">Send</button>
         </div>
       </form>
