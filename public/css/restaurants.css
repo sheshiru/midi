@@ -20,6 +20,7 @@
   border-top-color: #102526;
   border-bottom-color: #2f5658;
 }
+
 .restaurants-page-container {
   display: flex;
   justify-content: space-evenly;
@@ -39,7 +40,7 @@
 .left-sidebar:after {
   content: "";
   border-right: 1px solid black;
-  height: 60%;
+  height: 50%;
   width: 19%;
   position: absolute;
   margin-top: 5%;
@@ -78,6 +79,7 @@ h1.restaurants-title {
 
   text-underline-position: under;
 }
+
 .restaurants-image {
   height: 158px;
   cursor: pointer;
@@ -86,10 +88,12 @@ h1.restaurants-title {
 .restaurants-image:hover {
   border: 3px solid #f37226;
 }
+
 .restaurants-grid {
   display: flex;
   flex-wrap: wrap;
 }
+
 .one-restaurant-container {
   width: 30%;
   margin-right: 20px;
@@ -112,17 +116,25 @@ h1.restaurants-title {
 /* The popup (background) */
 .popup,
 .mlpopup {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
   /* z-index: 1; Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
   z-index: 10;
 }
 
