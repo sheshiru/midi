@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const Company = require("../models/Company");
 const Restaurant = require("../models/Restaurant");
+const User = require("../models/User");
 const seeds = require("../bin/seeds");
 const getDistance = require("./google_distance");
 
@@ -70,6 +71,10 @@ router.get("/favorites", (req, res) => {
 // Company.insertMany(seeds)
 //   .then(res => console.log("companies added", res))
 //   .catch(err => console.log("error adding companies:", err));
+
+// User.insertMany(seeds)
+//   .then(res => console.log("user added", res))
+//   .catch(err => console.log("error adding user:", err));
 
 module.exports = router;
 

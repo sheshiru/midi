@@ -46,5 +46,14 @@ const companies = [
   }
 ];
 
+const user = [
+  {
+    name: "cecile",
+    firstName: "Pham",
+    email: "cec@cec.cec"
+  }
+];
+
 module.exports = restaurants;
 module.exports = companies;
+module.exports = user;

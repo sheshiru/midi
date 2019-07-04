@@ -14,6 +14,7 @@ const adminFormRouter = require("./routes/admin-forms");
 const randomRouter = require("./routes/random");
 const editRestau = require("./routes/edit");
 const deleteRestau = require("./routes/delete");
+const userAccount = require("./routes/user-account");
 
 app.set("view engine", "hbs"); //
 app.set("views", __dirname + "/views"); //
@@ -30,6 +31,7 @@ app.use(adminFormRouter);
 app.use(randomRouter);
 app.use(editRestau);
 app.use(deleteRestau);
+app.use(userAccount);
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
