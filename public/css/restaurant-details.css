@@ -1,8 +1,3 @@
-.wrapper-restaurant-detail {
-  background-color: #FFFFF8;
-  min-height: 100vh;
-}
-
 .resto-container {
   display: flex;
   justify-content: center;
@@ -37,10 +32,6 @@
   margin-top: 8px;
 }
 
-
-
-
-
 .sendButtonContainer {
   display: flex;
   justify-content: center;
@@ -57,18 +48,15 @@
 
 .sendButton:hover {
   cursor: pointer;
-  background: #116B64;
+  background: #116b64;
   transition-duration: 0.2s;
   color: white;
 }
-
-
 
 .speedContainerButtons {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-
 }
 
 #speed1,
@@ -81,7 +69,6 @@
 .resto-left-container {
   width: 360px;
   height: 230px;
-
 }
 
 .resto-right-container {

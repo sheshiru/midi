@@ -7,7 +7,7 @@ const comp = require("../models/Company");
 
 router.get("/restaurant/:id", async (req, res) => {
   try {
-    let bigWrapper = "wrapper-restaurant-detail";
+    let bigWrapper = "wrapper-pages";
     const resto = await Restaurant.findById(req.params.id);
     let likesCount = resto.favorites.length;
     const company = await comp.findById(req.query.companyId);

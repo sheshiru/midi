@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #f9f9f0;
+  color: #fffff8;
 }
 
 .login-link {
@@ -29,13 +29,13 @@
 .login-link:hover {
   font-size: 1.2rem;
   text-decoration: underline;
-  text-decoration-color: #CB2B04;
+  text-decoration-color: #cb2b04;
   text-underline-position: under;
 }
 
 .signup-link:hover {
   font-size: 1.2rem;
   text-decoration: underline;
-  text-decoration-color: #CB2B04;
+  text-decoration-color: #cb2b04;
   text-underline-position: under;
 }

@@ -2,8 +2,9 @@ const express = require("express");
 const router = new express.Router();
 const Restaurant = require("../models/Restaurant");
 const uploadCloud = require("../config/cloudinary.js");
+const guardRoute = require("./../utils/guard-route");
 
-router.get("/contribute", (req, res) => {
+router.get("/contribute", guardRoute, (req, res) => {
   let bigWrapper = "wrapper-pages";
   res.render("contribute", { navlayout: true, bigWrapper });
 });

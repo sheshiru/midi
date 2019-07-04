@@ -44,7 +44,7 @@ router.post("/login", (req, res) => {
         req.session.currentUser = dbRes;
         console.log(dbRes);
 
-        return res.redirect("/");
+        return res.redirect("/restaurants");
       } else console.log("pas bon");
 
       return res.render("auth/login", {
@@ -106,7 +106,7 @@ router.post("/signup", (req, res, next) => {
               text: "You signed up successfully !",
               status: "success"
             };
-            res.redirect("/restaurants");
+            res.redirect("/login");
           })
           .catch(err => console.log(err));
       })
@@ -120,7 +120,7 @@ router.post("/signup", (req, res, next) => {
 router.get("/logout", (req, res, next) => {
   req.session.destroy(err => {
     // can't access session here
-    res.redirect("/login");
+    res.redirect("/");
   });
 });
 
