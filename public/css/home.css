@@ -93,7 +93,8 @@
 }
 
 .about-title {
-  font-size: 120%;
+  font-size: 150%;
+  margin-bottom: 20px;
 }
 
 .about-section {
@@ -102,10 +103,12 @@
   border-radius: 20px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .about-text {
   color: #071716;
+  font-size: 120%;
+  text-align: justify;
 }
