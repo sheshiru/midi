@@ -81,7 +81,7 @@ h1.restaurants-title {
 }
 
 .restaurants-image {
-  height: 158px;
+  height: 165px;
   cursor: pointer;
 }
 
@@ -95,8 +95,8 @@ h1.restaurants-title {
 }
 
 .one-restaurant-container {
-  width: 30%;
-  margin-right: 20px;
+  width: 27%;
+  margin-right: 35px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;

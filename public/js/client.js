@@ -62,9 +62,9 @@ function displayRestos(restos) {
   heart =>
     (heart.onclick = function(evt) {
       const restauId = this.getAttribute("data-restauId");
-      if (this.classList.contains("fas")) {
-        heart.classList.remove("far");
-      }
+
+      heart.classList.remove("far");
+
       heart.classList.add("fas");
     })
 );
