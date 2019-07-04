@@ -18,9 +18,9 @@ function filterRestos(value) {
 function displayRestos(restos) {
   function renderTemplate(infos) {
     return `<div class="one-restaurant-container">
-    <a href="/restaurant/${
-      infos._id
-    }?companyId=5d1b6d658bf6a50266175b84" class="individual-thumbnail">
+    <a href="/restaurant/${infos._id}?companyId=${
+      document.getElementById("company_id").value
+    }" class="individual-thumbnail">
       <div class="restaurants-image"><img src="${
         infos.image
       }" alt="restaurant image"></div>

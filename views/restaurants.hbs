@@ -1,14 +1,17 @@
 {{!-- SIDEBAR --}}
 <div class="restaurants-page-container">
-  <hr id="vertical_line">
+  <input id="company_id" type="hidden" value="{{company._id}}">
+
   <aside class="left-sidebar">
 
-    <h4 class="">Filter by:</h4>
+    <div class="sidebar-div">
+      <h2 id="sidebar-main-title">Filter by:</h2>
+    </div>
 
+    <div class="sidebar-div">
 
-    <div>
-      <h3>Type of food</h3>
-      <ul class="cuisine-list">
+      <h3 class="sidebar-title">Type of food</h3>
+      <ul class="sidebar-list" id="cuisine-list">
         <li class="cuisine-list-item"><a href="/restaurants/tag/Chicken">Chicken</a></li>
         <li class="cuisine-list-item"><a href="/restaurants/tag/Chinese">Chinese</a></li>
         <li class="cuisine-list-item"><a href="/restaurants/tag/French">French</a></li>
@@ -16,28 +19,28 @@
         <li class="cuisine-list-item"><a href="/restaurants/tag/Vietnamese">Vietnamese</a></li>
       </ul>
     </div>
-    <div>
-      <h3>Speed</h3>
-      <ul class="speed-list">
+    <div class="sidebar-div">
+      <h3 class="sidebar-title">Speed</h3>
+      <ul class="sidebar-list">
         <li class="speed-list-item"><a href="/restaurants/speed/fast">Fast</a></li>
         <li class="speed-list-item"><a href="/restaurants/speed/medium">Medium</a></li>
         <li class="speed-list-item"><a href="/restaurants/speed/slow">Slow</a></li>
       </ul>
     </div>
-    <div>
-      <h3>Distance</h3>
-      <ul class="distance-list">
+    <div class="sidebar-div">
+      <h3 class="sidebar-title">Distance</h3>
+      <ul class="sidebar-list">
         <li class="distance-list-item"><a href="/restaurants/200">Less than 200m</a></li>
         <li class="distance-list-item"><a href="/restaurants/800">Less than 800m</a></li>
         <li class="distance-list-item"><a href="/restaurants/far">800m and further</a></li>
       </ul>
     </div>
-    <div id="searchbar">
-      <input type="text" id="filter-restos" placeholder="Search..." onkeyup="filterRestos()" class="input">
+    <div id="searchbar" class="sidebar-div">
+      <input type="text" id="filter-restos" placeholder="Search..." class="input">
     </div>
-    <div>
+    <div class="sidebar-div">
       <a href="/restaurants">
-        <h3>Remove filters</h3>
+        <h3 class="sidebar-title" id="remove-filters">Remove filters</h3>
       </a>
     </div>
   </aside>
@@ -47,12 +50,16 @@
     <div class="restaurants-grid">
       {{#each restos}}
       <div class="one-restaurant-container">
-        <a href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail">
-          <div class="restaurants-image"><img src="{{this.image}}" alt="restaurant image"></div>
+        <div class="restaurants-image">
+          <a href="/restaurant/{{this._id}}?companyId={{../company._id}}" class="individual-thumbnail">
+            <img src="{{this.image}}" alt="restaurant image">
+          </a>
+        </div>
+        <div class="names-and-likes">
           <h2 class="restaurants-name">{{this.name}}</h2>
-          <p class="restaurants-distance">{{this.distance}}</p>
-          <p class="restaurants-favs">{{this.favorites.length}}<i class="far fa-heart"></i></p>
-        </a>
+          <p class="restaurants-favs">{{this.favorites.length}} <i class="far fa-heart"></i></p>
+        </div>
+        <p class="restaurants-distance">{{this.distance}}</p>
       </div>{{/each}}</div>
   </div>
 </div>
