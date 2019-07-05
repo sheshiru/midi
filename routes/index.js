@@ -90,11 +90,13 @@ router.get(
     // console.log(favResto);
     Restaurant.find({ verified: true })
       .then(restos => {
+        console.log(restos);
         if (!restos.length) {
           res.render("restaurants", { bigWrapper, navlayout: true });
           return;
         }
         Company.find().then(company => {
+          console.log(company);
           company = company[0];
           restos.forEach(resto => {
             getDistance([resto.address], [company.address], distance => {
