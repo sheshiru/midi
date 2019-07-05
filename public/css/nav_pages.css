@@ -23,10 +23,12 @@
   justify-content: flex-start;
   /* height: 80%; */
   width: 110px;
+  margin-right: 40px;
 }
 
 .logo-pic {
   display: block;
+
 }
 
 .navigation {
@@ -40,6 +42,7 @@
 .pages-navlinks-container {
   display: flex;
   justify-content: space-evenly;
+  margin-right: -60px;
   align-items: center;
   /* border: 1px solid red; */
   width: 100%;
