@@ -26,7 +26,7 @@ router.get("/random", guardRoute, (req, res) => {
       const randomIndex = Math.floor(Math.random() * dbRes.length);
       console.log(dbRes[randomIndex].address);
       comp
-        .findOne({ _id: "5d1b7109f37ffc1d8fe36211" })
+        .findOne({ _id: "5d1b6d658bf6a50266175b84" })
         .then(company => {
           let speed;
           console.log(company);
