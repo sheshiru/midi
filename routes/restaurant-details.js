@@ -20,6 +20,7 @@ router.get("/restaurant/:id", guardRoute, async (req, res) => {
       let isFav = false;
       if (favResto.includes(resto._id.toString())) {
         isFav = true;
+      }
       if (
         resto.speed.quick >= resto.speed.slow &&
         resto.speed.quick >= resto.speed.medium
