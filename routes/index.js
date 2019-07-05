@@ -11,6 +11,72 @@ router.get(["/", "/home"], (req, res) => {
 });
 
 router.get(
+  [
+    "/restaurants/speed/slow",
+    "/restaurants/speed/medium",
+    "/restaurants/speed/fast"
+  ],
+  (req, res) => {
+    let oneUser = req.session.currentUser;
+    let bigWrapper = "wrapper-restaurants";
+    let restauritos = [];
+    Restaurant.find({ verified: true })
+      .then(restos => {
+        const restu = JSON.parse(JSON.stringify(restos));
+        restauritos.push(restu);
+        console.log(restauritos);
+        restauritos.forEach(resto => {
+          if (
+            resto.speed.quick >= resto.speed.slow &&
+            resto.speed.quick >= resto.speed.medium
+          ) {
+            resto.speedStr = "fast";
+          } else if (
+            resto.speed.slow >= resto.speed.quick &&
+            resto.speed.slow >= resto.speed.medium
+          ) {
+            resto.speedStr = "slow";
+          } else if (
+            resto.speed.medium >= resto.speed.slow &&
+            resto.speed.medium >= resto.speed.quick
+          ) {
+            resto.speedStr = "normal";
+          } else if (
+            resto.speed.medium == resto.speed.quick &&
+            resto.speed.medium == resto.speed.slow
+          ) {
+            resto.speedStr = "normal";
+          }
+          if (restauritos.length === restos.length) {
+            if (req.url === "/restaurants/speed/slow") {
+              restauritos = restauritos.filter(oneResto => {
+                return oneResto.speedStr === "slow";
+              });
+            }
+            if (req.url === "/restaurants/speed/medium") {
+              restauritos = restauritos.filter(oneResto => {
+                return oneResto.speedStr === "normal";
+              });
+            }
+            if (req.url === "/restaurants/speed/fast") {
+              restauritos = restauritos.filter(oneResto => {
+                return oneResto.speedStr === "fast";
+              });
+            }
+            res.render("restaurants", {
+              restos: restauritos,
+              bigWrapper,
+              oneUser,
+              navlayout: true
+            });
+          }
+        });
+      })
+      .catch(err => console.error(err));
+  }
+);
+
+router.get(
   ["/restaurants", "/restaurants/200", "/restaurants/800", "/restaurants/far"],
   guardRoute,
   (req, res) => {
@@ -78,14 +144,14 @@ router.get("/restaurants/tag/:typeOfCuisine", (req, res) => {
 });
 
 // FUNCTION BELOW NOT WORKING: WHAT DO WE DO ABOUT THE SPEED?
-router.get("/restaurants/speed/:speed", (req, res) => {
-  let bigWrapper = "wrapper-restaurants";
-  Restaurant.find({ speed: req.params.speed, verified: true })
-    .then(restos => {
-      res.render("restaurants", { restos, navlayout: true, bigWrapper });
-    })
-    .catch(err => console.error(err));
-});
+// router.get("/restaurants/speed/:speed", (req, res) => {
+//   let bigWrapper = "wrapper-restaurants";
+//   Restaurant.find({ speed: req.params.speed, verified: true })
+//     .then(restos => {
+//       res.render("restaurants", { restos, navlayout: true, bigWrapper });
+//     })
+//     .catch(err => console.error(err));
+// });
 
 router.get("/admin-forms", (req, res) => {
   res.render("admin-forms", { navlayout: true });
