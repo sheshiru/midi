@@ -54,19 +54,6 @@
   );
   //
 
-  // button.addEventListener("click", function(e) {
-  //   e.preventDefault();
-  //   const resto_id = document
-  //     .querySelector(".speedContainerButtons")
-  //     .getAttribute("data-id");
-  //   axios
-  //     .post(`${siteUrl}/api/restaurant/${resto_id}`, {
-  //       speed: document.querySelector("[name=speed]:checked").value
-  //     })
-  //     .then(dbRes => console.log(dbRes))
-  //     .catch(dbErr => console.log(dbErr));
-  // });
-
   input.onkeyup = evt => filterRestos(evt.target.value);
 
   function filterRestos(value) {
@@ -79,22 +66,19 @@
       })
       .catch(apiErr => console.error(apiErr));
   }
-  // displayStates(states);
-  // input.onkeyup = evt => filterStates(evt.target.value, states);
-  // })
-  // .catch(APIErr => console.log(APIErr));
 
-  // function displayStates(states) {
-  // states.forEach((state) => list.innerHTML += `<li class="item state">${state}</li>`);
-  // }
-
-  // function filterStates(value, states) {
-  // let statesFiltered = states.filter(function (state) {
-  // return state.toLowerCase().includes(value.toLowerCase());
-  // });
-  // list.innerHTML = "";
-  // displayStates(statesFiltered);
-  // }
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    const resto_id = document
+      .querySelector(".speedContainerButtons")
+      .getAttribute("data-id");
+    axios
+      .post(`${siteUrl}/api/restaurant/${resto_id}`, {
+        speed: document.querySelector("[name=speed]:checked").value
+      })
+      .then(dbRes => console.log(dbRes))
+      .catch(dbErr => console.log(dbErr));
+  });
 
   // var mlpopup = document.getElementById("ml_popup");
   // var btnMl = document.querySelector(".btn-ml");
