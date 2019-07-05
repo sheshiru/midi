@@ -26,17 +26,19 @@ router.get("/random", guardRoute, (req, res) => {
       const randomIndex = Math.floor(Math.random() * dbRes.length);
       console.log(dbRes[randomIndex].address);
       comp
-        .findOne({ _id: "5d1b7109f37ffc1d8fe36211" })
+        .findOne({ _id: "5d1b6d658bf6a50266175b84" })
         .then(company => {
           console.log(company);
           getDistance(
             [dbRes[randomIndex].address],
             [company.address],
             distance => {
+              let bigWrapper = "wrapper-pages";
               res.render("random-restaurant", {
                 dbRes: dbRes[randomIndex],
                 distance,
-                navlayout: true
+                navlayout: true,
+                bigWrapper
               });
             }
           );
