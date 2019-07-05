@@ -16,26 +16,33 @@
     <h1 class="your_favorites"> <i class="far fa-heart"></i> Your favorites :
       <div class="favorites_user">
         {{#each users}} {{#each favorites}}
-
-        <a href="/restaurant/{{this._id}}?companyId=5d1f4ed0fb6fc00e79b57ad7">
-
-          <div class"sizeFavorites">
+        <div class="one-fav-container">
+          <a href="/restaurant/{{this._id}}?companyId=5d1f4ed0fb6fc00e79b57ad7">
             <img class="imgFavorites" src="{{this.image}}" alt="imgfav">
             <h3 class="fav-title">{{this.name}}
             </h3>
-        </a>
+          </a>
+        </div>
+
+        {{/each}} {{/each}}
       </div>
+    </h1>
 
-      {{/each}} {{/each}}
+
+
+    {{#unless isLoggedOut}}
+    <a href="/logout">
+      <span class="btn-logout"><i class="fas fa-power-off"></i> Log Out</span>
+    </a>
+    {{/unless}}
   </div>
-  </h1>
+</div>
 
 
-
-  {{#unless isLoggedOut}}
-  <a href="/logout">
-    <span class="btn-logout"><i class="fas fa-power-off"></i> Log Out</span>
-  </a>
-  {{/unless}}
+{{#unless isLoggedOut}}
+<a href="/logout">
+  <span class="btn-logout"><i class="fas fa-power-off"></i> Log Out</span>
+</a>
+{{/unless}}
 </div>
 </div>

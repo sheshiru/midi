@@ -50,9 +50,7 @@ USER/ADMIN FORM
   display: flex;
   flex-direction: column;
   max-width: 400px;
-
 }
-
 
 #user_add_form label,
 #admin-add-form label {
@@ -69,7 +67,6 @@ USER/ADMIN FORM
   padding: 0.7rem;
   border-radius: 0.2rem;
   font-size: 0.9rem;
-
 }
 
 #user_add_form input:last-of-type,
@@ -104,8 +101,6 @@ USER/ADMIN FORM
   padding: 20px;
   width: 100%;
 }
-
-
 
 .share {
   margin-bottom: 10px;
