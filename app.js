@@ -63,13 +63,13 @@ app.use(cookieParser());
 app.use(buttonClicked);
 
 let db;
-const restaurants = require("./bin/seeds");
-const restaurantModel = require("./models/Restaurant");
+// const restaurants = require("./bin/seeds");
+// const restaurantModel = require("./models/Restaurant");
 
-restaurantModel
-  .insertMany(restaurants)
-  .then(() => console.log("yes"))
-  .catch(err => console.log(err));
+// restaurantModel
+//   .insertMany(restaurants)
+//   .then(() => console.log("yes"))
+//   .catch(err => console.log(err));
 
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
