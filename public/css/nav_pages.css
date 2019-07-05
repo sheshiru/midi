@@ -70,7 +70,8 @@
   /* border: 1px solid red; */
   width: 14%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-right: 30px;
   align-items: center;
 }
 
@@ -78,4 +79,8 @@
 .favorites-link .far,
 .wishlist-link .fas {
   font-size: 1.8rem;
+}
+
+.user-account-link .far {
+  margin-right: 8px;
 }

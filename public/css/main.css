@@ -9,10 +9,10 @@
 @import "./restaurants.css";
 @import "./user-account.css";
 
-@font-face {
+/* @font-face {
   font-family: "Notomono";
   src: url("./../medias/fonts/NotoMono-Regular.ttf") format("ttf");
-}
+} */
 
 /* -------------------------------------------------------------------------------- */
 /*  CSS Reset
@@ -21,6 +21,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -84,6 +86,7 @@ img {
   border-top-color: #102526;
   border-bottom-color: #2f5658;
 }
+
 .not-found {
   text-align: center;
   height: 400px;
@@ -93,6 +96,7 @@ img {
   background-size: contain;
   padding: 4%;
 }
+
 .not-found h1 {
   font-size: 2.5rem;
 }
@@ -149,17 +153,25 @@ img {
 
 /* The popup (background) */
 .popup {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
   /* z-index: 1; Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
   z-index: 10;
 }
 

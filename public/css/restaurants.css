@@ -9,6 +9,7 @@
   border-top-color: #102526;
   border-bottom-color: #102526;
 } */
+
 .wrapper-restaurants {
   width: 100vw;
   max-width: 100vw;
@@ -43,7 +44,8 @@
   height: 50%;
   width: 19%;
   position: absolute;
-  margin-top: 5%;
+  margin-top: 3%;
+  margin-bottom: 6%;
   z-index: 1;
 }
 
@@ -73,7 +75,7 @@
 }
 
 h1.restaurants-title {
-  color: #f37226;
+  color: #EE5436;
   font-size: 1.5rem;
   margin-bottom: 3%;
 
@@ -86,7 +88,7 @@ h1.restaurants-title {
 }
 
 .restaurants-image:hover {
-  border: 3px solid #f37226;
+  border: 3px solid #EE5436;
 }
 
 .restaurants-grid {

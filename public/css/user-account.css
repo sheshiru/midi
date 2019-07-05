@@ -2,4 +2,64 @@
   width: 100vw;
   background-color: #fffff8;
   min-height: 100vh;
+  width: 50%;
+}
+
+.user_container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 30px;
+
+}
+
+.each_user {
+  display: block;
+  margin: 30px;
+
+}
+
+.hello_user {
+  margin-bottom: 50px;
+  margin-top: 30px;
+  font-size: 1.5em;
+  margin: 30px;
+}
+
+.list_user {
+  margin-bottom: 20px;
+  margin: 30px;
+
+}
+
+.your_favorites {
+  margin-bottom: 50px;
+  margin: 30px;
+  font-weight: bold;
+  font-size: 1.2em;
+
+
+}
+
+.favorites_user {
+
+  display: flex;
+  flex-direction: row;
+  flex: wrap;
+  margin: 30px;
+
+}
+
+.your_favorites>div>a>div>img {
+  height: 180px;
+  width: 250px;
+
+
+  margin: 30px;
+
+}
+
+.sizeFavorites {
+
+  margin-bottom: 50px;
 }
