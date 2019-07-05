@@ -97,7 +97,7 @@ router.get(
         Company.find().then(company => {
           company = company[0];
           restos.forEach(resto => {
-            console.log(resto.address);
+            console.log(resto.address, company.address);
             getDistance([resto.address], [company.address], distance => {
               resto["distance"] = distance;
               const restu = JSON.parse(JSON.stringify(resto));
