@@ -2,6 +2,7 @@
 .admin-forms-wrapper {
   min-height: 100vh;
 }
+
 .contribute-page-title,
 .admin-forms-page-title {
   font-size: 1.8rem;
@@ -9,12 +10,14 @@
   margin-bottom: 2%;
   margin-top: 2%;
 }
+
 .separator-horizontal {
   border-color: #071716;
   width: 40%;
   margin: auto;
   margin-bottom: 2%;
 }
+
 .user-form-frame,
 .admin-form-frame {
   /* background-color: #071716; */
@@ -25,6 +28,7 @@
   align-items: center;
   margin: auto;
 }
+
 .user-form-container,
 .admin-form-container {
   background-color: #fffff8;
@@ -42,7 +46,9 @@ USER/ADMIN FORM
   display: flex;
   flex-direction: column;
   max-width: 400px;
+
 }
+
 
 #user_add_form label,
 #admin-add-form label {
@@ -52,10 +58,14 @@ USER/ADMIN FORM
 
 #user_add_form input,
 #admin-add-form input {
-  border: 1px solid #071716;
+  border-bottom: 1px solid #071716;
+  border-top: 0px solid #fffff8;
+  border-right: 0px solid #fffff8;
+  border-left: 0px solid #fffff8;
   padding: 0.7rem;
   border-radius: 0.2rem;
   font-size: 0.9rem;
+
 }
 
 #user_add_form input:last-of-type,
@@ -67,6 +77,7 @@ USER/ADMIN FORM
   border: 2px solid;
   border-radius: 0.3rem;
   padding: 6px;
+
   cursor: pointer;
 }
 .btn-send:hover {
@@ -87,6 +98,15 @@ USER/ADMIN FORM
   padding: 20px;
   width: 100%;
 }
+
+
+
 .share {
   margin-bottom: 10px;
+}
+
+.btn-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
