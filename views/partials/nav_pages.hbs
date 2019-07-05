@@ -11,6 +11,10 @@
     </div>
 
     <div class="pages-icons-container">
+
+      {{#unless isLoggedin}}
+      <a class="user-account-link" href="/login"></a>
+      {{/unless}}
       <a class="user-account-link" href="/user-account/{{oneUser._id}}"><i class="far fa-user"></i></a>
       {{!-- <a class="favorites-link" href="/favorites"><i class="far fa-heart"></i></a> --}}
       {{!-- <a class="wishlist-link" href="/wishlist"><i class="fas fa-list"></i></a> --}}
