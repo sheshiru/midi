@@ -8,18 +8,18 @@
       <form method="post" action="/user_add_restaurant" id="user_add_form" enctype="multipart/form-data">
         <div class="part1-flex-col">
           <label for="restaurant-name">Restaurant name</label>
-          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" value="beber">
+          <input name="name" id="restaurant-name" type="text" placeholder="Ex : Bao Bao" required>
 
           <label for="cuisine">Type of cuisine</label>
-          <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" value="Vietnamese">
+          <input id="cuisine" name="typeOfCuisine" type="text" placeholder="ex: Vietnamese" required>
 
           <label for="address">Address</label>
-          <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" value="37 rue raspail">
+          <input id="address" name="address" type="text" placeholder="ex: 37 rue raspail" required>
         </div>
         <div class="part2-flex-row">
           <div class="speed">
             <p class="share">Share you're experience about service speed</p>
-            <input type="radio" id="quick" name="speed" value="quick">
+            <input type="radio" id="quick" name="speed" aluve="quick">
             <label for="huey">Quick</label>
             <input type="radio" id="medium" name="speed" value="medium">
             <label for="dewey">Medium</label>
@@ -27,7 +27,7 @@
             <label for="louie">Slow</label>
           </div>
           <div class="takeout">
-            <p>Take out</p>
+            <p class="share">Take out</p>
             <input id="take_out" name="takeout" type="radio" value="Take away">
             <label for="takeaway">Take away</label>
             <input id="eat_in" name="eatin" type="radio" value="Eat in">
@@ -39,8 +39,7 @@
 
         <div class="part3-flex-col">
           <label for="recommendations">Let us know which meal you recommend</label>
-          <input id="recommendations" name="recommendations" type="text" placeholder="ex: lamen porc haché piquant"
-            value="lamen porc haché piquant">
+          <input id="recommendations" name="recommendations" type="text" placeholder="ex: lamen porc haché piquant">
           <label for="restaurant_img">Image</label>
           <input name="restaurant_img" id="restaurant_img" type="file">
           {{#if successMsg}}

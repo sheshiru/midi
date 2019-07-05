@@ -75,15 +75,15 @@ const restaurants = [
   }
 ];
 
-const companies = [
-  {
-    name: "IronHack",
-    address: "226 boulevard Voltaire Paris",
-    // userList: [],
-    logo:
-      "https://www.refreshmiami.com/wp-content/uploads/2018/07/55085_logo-ironhack.png"
-  }
-];
+// const companies = [
+//   {
+//     name: "IronHack",
+//     address: "226 boulevard Voltaire Paris",
+//     // userList: [],
+//     logo:
+//       "https://www.refreshmiami.com/wp-content/uploads/2018/07/55085_logo-ironhack.png"
+//   }
+// ];
 
 const user = [
   {

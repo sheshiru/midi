@@ -80,6 +80,13 @@ USER/ADMIN FORM
 
   cursor: pointer;
 }
+.btn-send:hover {
+  background-color: #1d4244;
+  color: #fffff8;
+}
+.btn-send:active {
+  transform: translateY(2px);
+}
 
 .success-message {
   text-align: center;
