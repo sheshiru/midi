@@ -1,17 +1,44 @@
-<h1>User account blablablaaaaaaa</h1>
+<div class="user_container">
 
-<h1>hello </h1>
-<div>
-  {{#each users}}
-  <h2>{{this.name}}</h2>
-  {{this.lastName}}
-  {{this.email}}
-  {{/each}}
+
+  <div class="each_user">
+    <h1 class="hello_user">Hello {{users.name}} !</h1>
+    {{#each users}}
+
+    <ul class="list_user">
+      <li>
+        {{this.name}}</li>
+      <li>{{this.lastName}}</li>
+      <li> {{this.email}}</li>
+    </ul>
+    {{/each}}
+
+
+
+
+    <h1 class="your_favorites"> <i class="far fa-heart"></i> Your favorites :
+      <div class="favorites_user">
+        {{#each users}} {{#each favorites}}
+
+        <a href="/restaurant/{{this._id}}?companyId=5d1b7109f37ffc1d8fe36211">
+
+          <div class"sizeFavorites">
+            <img class="imgFavorites" src="{{this.image}}" alt="imgfav">
+          </div>
+
+          {{this.name}}
+        </a>
+
+        {{/each}} {{/each}}
+      </div>
+    </h1>
+
+
+
+    {{#unless isLoggedOut}}
+    <a href="/logout">
+      <span class="btn-logout"><i class="fas fa-power-off"></i>Log Out</span>
+    </a>
+    {{/unless}}
+  </div>
 </div>
-
-
-{{#unless isLoggedOut}}
-<a href="/logout">
-  <span class="btn-logout"><i class="fas fa-power-off"></i>Log Out</span>
-</a>
-{{/unless}}

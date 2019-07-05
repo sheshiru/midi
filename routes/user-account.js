@@ -6,6 +6,7 @@ const guardRoute = require("./../utils/guard-route");
 router.get("/user-account/:id", guardRoute, (req, res) => {
   let bigWrapper = "wrapper-pages";
   User.findById(req.params.id)
+    .populate("favorites")
     .then(users => {
       res.render("user/user-account", { users, bigWrapper, navlayout: true });
     })
