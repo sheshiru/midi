@@ -60,7 +60,7 @@ router.post("/login", (req, res) => {
     });
 });
 
-router.get("/signup", guardRoute, (req, res) => {
+router.get("/signup", (req, res) => {
   let bigWrapper = "wrapper-pages";
   res.render("auth/signup", { navlayout: true, bigWrapper });
 });
