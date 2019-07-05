@@ -10,13 +10,22 @@ router.get("/restaurant/:id", guardRoute, async (req, res) => {
   try {
     let bigWrapper = "wrapper-pages";
     const resto = await Restaurant.findById(req.params.id);
-    let likesCount = resto.favorites.length;
     const company = await comp.findById(req.query.companyId);
+    let speed;
     getDistance([resto.address], [company.address], distance => {
+      if (resto.speed.quick >= resto.speed.slow && resto.speed.medium) {
+        speed = "quick";
+      }
+      if (resto.speed.slow >= resto.speed.quick && resto.speed.medium) {
+        speed = "slow";
+      }
+      if (resto.speed.medium >= resto.speed.slow && resto.speed.quick) {
+        speed = "medium";
+      }
       res.render("restaurant-details", {
-        likesCount,
         resto,
         company,
+        speed,
         distance,
         bigWrapper,
         navlayout: true
