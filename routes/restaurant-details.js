@@ -9,13 +9,21 @@ const guardRoute = require("./../utils/guard-route");
 router.get("/restaurant/:id", guardRoute, async (req, res) => {
   try {
     let bigWrapper = "wrapper-pages";
-    const resto = await Restaurant.findById(req.params.id);
+    let oneUser = req.session.currentUser;
+    const favResto = [...oneUser.favorites];
+    let resto = await Restaurant.findById(req.params.id);
+
     let likesCount = resto.favorites.length;
     const company = await comp.findById(req.query.companyId);
     getDistance([resto.address], [company.address], distance => {
+      let isFav = false;
+      if (favResto.includes(resto._id.toString())) {
+        isFav = true;
+      }
       res.render("restaurant-details", {
         likesCount,
         resto,
+        isFav,
         company,
         distance,
         bigWrapper,

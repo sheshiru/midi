@@ -36,10 +36,17 @@ function displayRestos(restos) {
   heart =>
     (heart.onclick = function(evt) {
       const restauId = this.getAttribute("data-restauId");
+      console.log(restauId);
+      axios
+        .post(`${siteUrl}/addToFav/${restauId}`)
+        .then(id => console.log(id))
+        .catch(err => console.log(err));
+
       if (this.classList.contains("fas")) {
-        heart.classList.remove("far");
+        heart.classList.replace("fas", "far");
+      } else if (heart.classList.contains("far")) {
+        heart.classList.replace("far", "fas");
       }
-      heart.classList.add("fas");
     })
 );
 //

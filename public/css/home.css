@@ -72,7 +72,7 @@
 .arrow-down {
   display: flex;
   align-items: flex-end;
-  height: 100%;
+  height: 90%;
 }
 .fa-chevron-down {
   color: #fffff8;
