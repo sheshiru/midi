@@ -83,6 +83,8 @@ router.get(
     let oneUser = req.session.currentUser;
     let restauritos = [];
     let bigWrapper = "wrapper-restaurants";
+    const favResto = [...oneUser.favorites];
+    // console.log(favResto);
     Restaurant.find({ verified: true })
       .then(restos => {
         if (!restos.length) {
@@ -98,6 +100,12 @@ router.get(
               restu.distance = distance;
               restauritos.push(restu);
               // console.log(restauritos);
+              restauritos.forEach(oneResto => {
+                oneResto.isFav = false;
+                if (favResto.includes(oneResto._id)) {
+                  oneResto.isFav = true;
+                }
+              });
               if (restauritos.length === restos.length) {
                 if (req.url === "/restaurants/200") {
                   restauritos = restauritos.filter(oneResto => {

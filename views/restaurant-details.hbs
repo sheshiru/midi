@@ -5,7 +5,15 @@
     {{!-- ADD: Click to add to favorites + source for heart image --}}
     {{!-- Add later: toggle heart full or empty depending on whether the restaurant is in the user's favorites or not --}}
     <a href="" id="resto-likes-container">
-      <div class="resto-likes">{{resto.favorites.length}}</div> <i class="far fa-heart lea" aria-hidden="true"></i>
+      <div class="resto-likes">{{likesCount}}</div>
+
+      {{#if isFav}}
+      <i data-restauId={{resto._id}} class="fas fa-heart lea"></i>
+      {{else}}
+      <i data-restauId={{resto._id}} class="far fa-heart lea"></i>
+      {{/if}}
+      {{!-- <i class="far fa-heart lea" aria-hidden="true"></i> --}}
+
     </a>
   </div>
 

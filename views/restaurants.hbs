@@ -57,7 +57,16 @@
         </div>
         <div class="names-and-likes">
           <h2 class="restaurants-name">{{this.name}}</h2>
-          <p class="restaurants-favs">{{this.favorites.length}} <i class="far fa-heart likes-heart"></i></p>
+          <p class="restaurants-favs">{{this.favorites.length}}
+            {{!-- {{ternary this.isFav "<i data-restauId={{this._id}} class='fas fa-heart likes-heart'></i>" "<i
+              data-restauId={{this._id}} class='far fa-heart likes-heart'></i>"}} --}}
+            {{#if this.isFav}}
+            <i data-restauId={{this._id}} class='fas fa-heart likes-heart'></i>
+            {{else}}
+            <i data-restauId={{this._id}} class='far fa-heart likes-heart'></i>
+            {{/if}}
+
+          </p>
         </div>
         <p class="restaurants-distance">{{this.distance}}</p>
       </div>{{/each}}</div>
