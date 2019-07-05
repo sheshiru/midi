@@ -11,7 +11,8 @@ const restaurants = [
       "https://cdn1.centralapp.com/api/v1/media/gallery-large/place-5753-t3ecunt851une4s34lbz.jpeg",
     takeout: "Both",
     recommendations: ["Ground pork lamen", "Xiao Long Bao"],
-    favorites: []
+    favorites: [],
+    verified: true
   },
   {
     name: "Le Comptoir du Poulet",
@@ -21,7 +22,8 @@ const restaurants = [
     image: "https://f.roocdn.com/images/menus/96486/header-image.jpg",
     takeout: "Both",
     recommendations: ["1/2 poulet"],
-    favorites: []
+    favorites: [],
+    verified: true
   },
   {
     name: "Mme Shawn",
@@ -32,7 +34,8 @@ const restaurants = [
       "https://www.sortiraparis.com/images/55/14066/259051-mme-shawn-bistrot-thailandais-arrive-chez-ubereats.jpg",
     takeout: "Both",
     recommendations: [],
-    favorites: []
+    favorites: [],
+    verified: true
   },
   {
     name: "Café Titon",
@@ -43,7 +46,8 @@ const restaurants = [
       "https://u.tfstatic.com/restaurant_photos/933/210933/169/612/cafe-titon-vue-detail-table-a1f7c.jpg",
     takeout: "Both",
     recommendations: [],
-    favorites: []
+    favorites: [],
+    verified: true
   },
   {
     name: "Café Moco",
@@ -54,7 +58,8 @@ const restaurants = [
       "https://s3-media3.fl.yelpcdn.com/bphoto/R1P5MELboIx63B4cp5PcXA/ls.jpg",
     takeout: "Both",
     recommendations: [],
-    favorites: []
+    favorites: [],
+    verified: true
   },
   {
     name: "Gharbia Bio",
@@ -65,7 +70,8 @@ const restaurants = [
       "https://uploads.lebonbon.fr/source/2018/paris/juin/mel/Gharbia2.jpg",
     takeout: "Both",
     recommendations: [],
-    favorites: []
+    favorites: [],
+    verified: true
   }
 ];
 
@@ -88,5 +94,5 @@ const user = [
 ];
 
 module.exports = restaurants;
-module.exports = companies;
-module.exports = user;
+// module.exports = companies;
+// module.exports = user;
