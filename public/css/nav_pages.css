@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-  width: 90%;
+  width: 100%;
   margin: auto;
   /* border: 2px solid green; */
   padding-left: 100px;
@@ -22,7 +22,7 @@
   display: flex;
   justify-content: flex-start;
   /* height: 80%; */
-  width: 130px;
+  width: 110px;
 }
 
 .logo-pic {
