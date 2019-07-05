@@ -156,7 +156,8 @@ router.get("/restaurants/tag/:typeOfCuisine", (req, res) => {
 });
 
 router.get("/admin-forms", (req, res) => {
-  res.render("admin-forms", { navlayout: true });
+  let bigWrapper = "wrapper-pages";
+  res.render("admin-forms", { navlayout: true, bigWrapper });
 });
 
 router.get("/wishlist", (req, res) => {

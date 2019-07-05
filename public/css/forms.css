@@ -60,10 +60,7 @@ USER/ADMIN FORM
 
 #user_add_form input,
 #admin-add-form input {
-  border-bottom: 1px solid #071716;
-  border-top: 0px solid #fffff8;
-  border-right: 0px solid #fffff8;
-  border-left: 0px solid #fffff8;
+  border: 1px solid #071716;
   padding: 0.7rem;
   border-radius: 0.2rem;
   font-size: 0.9rem;
