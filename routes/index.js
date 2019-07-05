@@ -23,53 +23,56 @@ router.get(
     Restaurant.find({ verified: true })
       .then(restos => {
         const restu = JSON.parse(JSON.stringify(restos));
-        restauritos.push(restu);
-        console.log(restauritos);
+        restauritos = restu;
+        // console.log(restauritos);
         restauritos.forEach(resto => {
           if (
             resto.speed.quick >= resto.speed.slow &&
             resto.speed.quick >= resto.speed.medium
           ) {
             resto.speedStr = "fast";
-          } else if (
+          }
+          if (
             resto.speed.slow >= resto.speed.quick &&
             resto.speed.slow >= resto.speed.medium
           ) {
             resto.speedStr = "slow";
-          } else if (
+          }
+          if (
             resto.speed.medium >= resto.speed.slow &&
             resto.speed.medium >= resto.speed.quick
           ) {
             resto.speedStr = "normal";
-          } else if (
+          }
+          if (
             resto.speed.medium == resto.speed.quick &&
             resto.speed.medium == resto.speed.slow
           ) {
             resto.speedStr = "normal";
           }
-          if (restauritos.length === restos.length) {
-            if (req.url === "/restaurants/speed/slow") {
-              restauritos = restauritos.filter(oneResto => {
-                return oneResto.speedStr === "slow";
-              });
-            }
-            if (req.url === "/restaurants/speed/medium") {
-              restauritos = restauritos.filter(oneResto => {
-                return oneResto.speedStr === "normal";
-              });
-            }
-            if (req.url === "/restaurants/speed/fast") {
-              restauritos = restauritos.filter(oneResto => {
-                return oneResto.speedStr === "fast";
-              });
-            }
-            res.render("restaurants", {
-              restos: restauritos,
-              bigWrapper,
-              oneUser,
-              navlayout: true
+        });
+        if (restauritos.length === restos.length) {
+          if (req.url === "/restaurants/speed/slow") {
+            restauritos = restauritos.filter(oneResto => {
+              return oneResto.speedStr === "slow";
             });
           }
+          if (req.url === "/restaurants/speed/medium") {
+            restauritos = restauritos.filter(oneResto => {
+              return oneResto.speedStr === "normal";
+            });
+          }
+          if (req.url === "/restaurants/speed/fast") {
+            restauritos = restauritos.filter(oneResto => {
+              return oneResto.speedStr === "fast";
+            });
+          }
+        }
+        res.render("restaurants", {
+          restos: restauritos,
+          bigWrapper,
+          oneUser,
+          navlayout: true
         });
       })
       .catch(err => console.error(err));
