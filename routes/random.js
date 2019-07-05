@@ -4,6 +4,7 @@ const Restaurant = require("../models/Restaurant");
 const distance = require("google-distance-matrix");
 const getDistance = require("./google_distance");
 const comp = require("../models/Company");
+const guardRoute = require("./../utils/guard-route");
 
 // function getRandom() {
 //   Restaurant.count().exec(function(err, count) {
@@ -18,7 +19,7 @@ const comp = require("../models/Company");
 // getRandom();
 
 //wtf
-router.get("/random", (req, res) => {
+router.get("/random", guardRoute, (req, res) => {
   Restaurant.find()
     .then(dbRes => {
       // console.log("ici", dbRes);

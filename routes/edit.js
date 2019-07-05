@@ -2,8 +2,9 @@ const express = require("express");
 const router = new express.Router();
 const Restaurant = require("../models/Restaurant");
 const uploadCloud = require("../config/cloudinary");
+const guardRoute = require("./../utils/guard-route");
 
-router.get("/editRestau/:id", (req, res) => {
+router.get("/editRestau/:id", guardRoute, (req, res) => {
   Restaurant.findById(req.params.id)
     .then(resto => {
       res.render("restaurant_edit", { resto });

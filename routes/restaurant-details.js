@@ -4,8 +4,9 @@ const Restaurant = require("../models/Restaurant");
 const distance = require("google-distance-matrix");
 const getDistance = require("./google_distance");
 const comp = require("../models/Company");
+const guardRoute = require("./../utils/guard-route");
 
-router.get("/restaurant/:id", async (req, res) => {
+router.get("/restaurant/:id", guardRoute, async (req, res) => {
   try {
     let bigWrapper = "wrapper-pages";
     const resto = await Restaurant.findById(req.params.id);

@@ -8,7 +8,7 @@ router.post("/addToFav", (req, res) => {
   console.log(userId);
   console.log(req.body);
 
-  User.findByIdAndUpdate(userId, { $push: { favorites: friend } })
+  User.findByIdAndUpdate(userId, { $push: { favorites: fav } })
     .then(favorite => res.send(favorite))
     .catch(err => console.log(err));
 });

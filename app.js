@@ -69,9 +69,8 @@ app.locals.site_url = process.env.SITE_URL;
 app.locals.api_key = process.env.API_KEY;
 
 app.use(function(req, res, next) {
-  res
-    .status(404)
-    .send("This route does not exists! Check if everything is ok!");
+  let bigWrapper = "wrapper-pages";
+  res.status(404).render("404", { navlayout: true, bigWrapper });
 });
 
 const listener = app.listen(process.env.PORT || 7000, () => {

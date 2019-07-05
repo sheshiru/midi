@@ -6,6 +6,7 @@ const express = require("express");
 const router = new express.Router();
 const bcrypt = require("bcrypt");
 const User = require("./../models/User.js");
+const guardRoute = require("./../utils/guard-route");
 
 router.get("/login", (req, res) => {
   let bigWrapper = "wrapper-pages";
@@ -59,7 +60,7 @@ router.post("/login", (req, res) => {
     });
 });
 
-router.get("/signup", (req, res) => {
+router.get("/signup", guardRoute, (req, res) => {
   let bigWrapper = "wrapper-pages";
   res.render("auth/signup", { navlayout: true, bigWrapper });
 });
@@ -117,7 +118,7 @@ router.post("/signup", (req, res, next) => {
 //-------------------------------------------------------
 // LOGOUT PART
 //-------------------------------------------------------
-router.get("/logout", (req, res, next) => {
+router.get("/logout", guardRoute, (req, res, next) => {
   req.session.destroy(err => {
     // can't access session here
     res.redirect("/");

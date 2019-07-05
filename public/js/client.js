@@ -44,18 +44,18 @@ function displayRestos(restos) {
 );
 //
 
-button.addEventListener("click", function(e) {
-  e.preventDefault();
-  const resto_id = document
-    .querySelector(".speedContainerButtons")
-    .getAttribute("data-id");
-  axios
-    .post(`${siteUrl}/api/restaurant/${resto_id}`, {
-      speed: document.querySelector("[name=speed]:checked").value
-    })
-    .then(dbRes => console.log(dbRes))
-    .catch(dbErr => console.log(dbErr));
-});
+// button.addEventListener("click", function(e) {
+//   e.preventDefault();
+//   const resto_id = document
+//     .querySelector(".speedContainerButtons")
+//     .getAttribute("data-id");
+//   axios
+//     .post(`${siteUrl}/api/restaurant/${resto_id}`, {
+//       speed: document.querySelector("[name=speed]:checked").value
+//     })
+//     .then(dbRes => console.log(dbRes))
+//     .catch(dbErr => console.log(dbErr));
+// });
 
 input.onkeyup = evt => filterRestos(evt.target.value);
 
@@ -86,26 +86,25 @@ function filterRestos(value) {
 // displayStates(statesFiltered);
 // }
 
-// var popup = document.getElementById("cguPopup");
-// // Get the button that opens the popup
-// var btnCGU = document.querySelector(".cgu");
-// // Get the <span> element that closes the popup
-// var span = document.getElementsByClassName("close")[0];
-// // When the user clicks the button, open the popup
-// btnCGU.onclick = function() {
-//   popup.style.display = "block";
-// };
-// // When the user clicks on <span> (x), close the popup
-// span.onclick = function() {
-//   popup.style.display = "none";
-// };
-// // When the user clicks anywhere outside of the popup, close it
-// window.onclick = function(event) {
-//   event.preventDefault();
-//   if (event.target == popup) {
-//     popup.style.display = "none";
-//   }
-// };
+var popup = document.getElementById("myPopup");
+// Get the button that opens the popup
+var btnHelp = document.querySelector(".btn-help");
+// Get the <span> element that closes the popup
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the popup
+btnHelp.onclick = function() {
+  popup.style.display = "block";
+};
+// When the user clicks on <span> (x), close the popup
+span.onclick = function() {
+  popup.style.display = "none";
+};
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+};
 
 // var mlpopup = document.getElementById("mlPopup");
 // // Get the button that opens the popup
