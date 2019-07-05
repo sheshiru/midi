@@ -3,31 +3,26 @@
 
   <div class="each_user">
     <h1 class="hello_user">Hello {{users.name}} !</h1>
-    {{#each users}}
+    {{!-- {{#each users}} --}}
 
+    <h2 id="user-info-title">User information:</h2>
     <ul class="list_user">
-      <li>
-        {{this.name}}</li>
-      <li>{{this.lastName}}</li>
-      <li> {{this.email}}</li>
+      <li class="user-list-item"><b>First name: </b>{{users.name}}</li>
+      <li class="user-list-item"><b>Last name: </b> {{users.lastName}}</li>
+      <li class="user-list-item"><b>Email address: </b> {{users.email}}</li>
     </ul>
-    {{/each}}
-
-
-
+    {{!-- {{/each}} --}}
 
     <h1 class="your_favorites"> <i class="far fa-heart"></i> Your favorites :
       <div class="favorites_user">
         {{#each users}} {{#each favorites}}
-
-        <a href="/restaurant/{{this._id}}?companyId=5d1b7109f37ffc1d8fe36211">
-
-          <div class"sizeFavorites">
+        <div class="one-fav-container">
+          <a href="/restaurant/{{this._id}}?companyId=5d1b7109f37ffc1d8fe36211">
             <img class="imgFavorites" src="{{this.image}}" alt="imgfav">
-          </div>
-
-          {{this.name}}
-        </a>
+            <h3 class="fav-title">{{this.name}}
+            </h3>
+          </a>
+        </div>
 
         {{/each}} {{/each}}
       </div>
@@ -37,7 +32,7 @@
 
     {{#unless isLoggedOut}}
     <a href="/logout">
-      <span class="btn-logout"><i class="fas fa-power-off"></i>Log Out</span>
+      <span class="btn-logout"><i class="fas fa-power-off"></i> Log Out</span>
     </a>
     {{/unless}}
   </div>
